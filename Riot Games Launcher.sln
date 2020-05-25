@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riot Games Launcher", "Riot Games Launcher\Riot Games Launcher.csproj", "{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Debug|x64.ActiveCfg = Debug|x64
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Debug|x64.Build.0 = Debug|x64
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Debug|x86.ActiveCfg = Debug|x86
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Debug|x86.Build.0 = Debug|x86
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Release|x64.ActiveCfg = Release|x64
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Release|x64.Build.0 = Release|x64
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Release|x86.ActiveCfg = Release|x86
+		{6EDBACB7-85B3-42D0-9919-588B1EEA2BAD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9880FCF6-2102-44C2-91B1-ABC9AE9511BF}
+	EndGlobalSection
+EndGlobal
