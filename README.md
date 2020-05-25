@@ -1,4 +1,4 @@
-# unofficial-riot-games-launcher
+# Unofficial Riot-Games-Launcher
 
 ![Issues](https://img.shields.io/github/issues/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 ![Forks](https://img.shields.io/github/forks/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
