@@ -71,8 +71,5 @@ Copyright Disclaimer under section 107 of the Copyright Act of 1976, allowance i
 
 [Back To The Top](#unofficial-riot-games-launcher)
 
----
 
 
-
-[Back To The Top](#unofficial-riot-games-launcher)
