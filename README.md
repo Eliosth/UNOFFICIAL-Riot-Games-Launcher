@@ -22,7 +22,10 @@
 
 
 - [Description](#description)
+- [Built With](#built-with)
 - [How To Use](#how-to-use)
+- [Downloads](#downloads)
+- [API](#api)
 - [License](#license)
 
 ---
