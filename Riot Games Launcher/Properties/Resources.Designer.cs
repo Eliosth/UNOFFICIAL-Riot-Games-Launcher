@@ -63,6 +63,16 @@ namespace Riot_Games_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baconHero {
+            get {
+                object obj = ResourceManager.GetObject("baconHero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_window {
             get {
                 object obj = ResourceManager.GetObject("close_window", resourceCulture);
@@ -93,6 +103,16 @@ namespace Riot_Games_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_folder_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_search_folder_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_settings_32px", resourceCulture);
@@ -106,6 +126,16 @@ namespace Riot_Games_Launcher.Properties {
         internal static System.Drawing.Bitmap league_newlogo_banner {
             get {
                 object obj = ResourceManager.GetObject("league-newlogo-banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LeagueHero {
+            get {
+                object obj = ResourceManager.GetObject("LeagueHero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,16 +183,6 @@ namespace Riot_Games_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PS20_Volibear_Base {
-            get {
-                object obj = ResourceManager.GetObject("PS20_Volibear_Base", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap riot_games_1920x1080_valorant_asset {
             get {
                 object obj = ResourceManager.GetObject("riot-games-1920x1080-valorant-asset", resourceCulture);
@@ -183,9 +203,9 @@ namespace Riot_Games_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap riotgames_3840x2160_bligewater2 {
+        internal static System.Drawing.Bitmap settings {
             get {
-                object obj = ResourceManager.GetObject("riotgames-3840x2160-bligewater2", resourceCulture);
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +213,9 @@ namespace Riot_Games_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings {
+        internal static System.Drawing.Bitmap val {
             get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                object obj = ResourceManager.GetObject("val", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -211,11 +231,21 @@ namespace Riot_Games_Launcher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon VALORANT_Win64_Shipping_123 {
+            get {
+                object obj = ResourceManager.GetObject("VALORANT_Win64_Shipping_123", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap valorantSlide {
+        internal static System.Drawing.Bitmap valorantHero {
             get {
-                object obj = ResourceManager.GetObject("valorantSlide", resourceCulture);
+                object obj = ResourceManager.GetObject("valorantHero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

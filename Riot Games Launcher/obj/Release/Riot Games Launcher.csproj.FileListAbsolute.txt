@@ -1,0 +1,20 @@
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Riot Games Launcher.exe.config
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Riot Games Launcher.exe
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Riot Games Launcher.pdb
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.xml
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot Games Launcher.csprojAssemblyReference.cache
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot_Games_Launcher.Form1.resources
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot_Games_Launcher.Properties.Resources.resources
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot Games Launcher.csproj.GenerateResource.cache
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot Games Launcher.csproj.CoreCompileInputs.cache
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot Games Launcher.csproj.CopyComplete
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot Games Launcher.exe
+C:\Users\Eliosth\source\repos\Riot Games Launcher\Riot Games Launcher\obj\Release\Riot Games Launcher.pdb

@@ -121,7 +121,7 @@
   <data name="Valorant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Valorant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="riotgames-3840x2160-bligewater2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="baconHero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\riotgames-3840x2160-bligewater2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="riot-games-1920x1080-valorant-asset" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -160,10 +160,19 @@
   <data name="icons8_minus_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_minus_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PS20_Volibear_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="LeagueHero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PS20_Volibear_Base.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="valorantSlide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\valorantSlide.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_search_folder_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_search_folder_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="val" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\val.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VALORANT_Win64_Shipping_123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VALORANT-Win64-Shipping_123.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="valorantHero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\valorantHero.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
