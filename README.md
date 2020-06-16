@@ -6,7 +6,7 @@
 ![Stars](https://img.shields.io/github/stars/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 
 
-![Project Image](https://firebasestorage.googleapis.com/v0/b/vengo-1588217914307.appspot.com/o/Launcher.jpg?alt=media&token=486e855f-79ad-4f83-a801-9025c0008999)
+![Project Image](https://i.imgur.com/bW12MWN.gif)
 
 
 > Unofficial Riot Games Launcher.
