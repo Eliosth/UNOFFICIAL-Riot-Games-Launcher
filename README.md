@@ -26,7 +26,7 @@
 - [How To Use](#how-to-use)
 - [Downloads](#downloads)
 - [API](#api)
-- [License](#license)
+- [Riot Copyright](#Copyright)
 
 ---
 
@@ -64,7 +64,7 @@ After installation, it is only necessary to grant the path to the Riot Games fol
 <a href="https://www.nuget.org/packages/WindowsAPICodePack-Core">WindowsAPICodePack-Core 1.1.2</a>
 ---
 
-## License
+## CopyRight
 
 “All the images, and names used in the project belong to their respective owners and I or this profile does not claim any right over them.
 
