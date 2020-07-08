@@ -19,9 +19,9 @@
 
 ### Languages, Idiomas
 
-- [Enlgish](#en)
-- [Español](#es)
-
+- [Enlgish](#english)
+- [Español](#español)
+---
 
 # English
 
@@ -74,7 +74,7 @@ Simply install the file and the program will automatically detect the path to C:
 ----
 
 
-
+# Español
 
 ## Descripción
 
@@ -82,10 +82,10 @@ Este proyecto se lleva a cabo con el único propósito de colocar todos los jueg
 
 ### Tabla de contenido
 
-- [Cómo usar](#cómo usar)
+- [Cómo usar](#cómo-usar)
 
-- [Último lanzamiento](#último lanzamiento)
-- [Módulos de nodo utilizados](#módulos de nodo)
+- [Último lanzamiento](#último-lanzamiento)
+- [Módulos de nodo utilizados](#módulos-de-node-js)
 ---
 
 # [Último lanzamiento](https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/releases)
