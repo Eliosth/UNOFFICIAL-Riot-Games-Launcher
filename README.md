@@ -14,7 +14,7 @@
 # Team
 
 ### Eliosth - Developer
-### lunepassages - Concept Art
+### lunepassage - Concept Art
 -----
 
 ### Languages, Idiomas
