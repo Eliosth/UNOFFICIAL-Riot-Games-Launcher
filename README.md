@@ -5,73 +5,123 @@
 
 ![Stars](https://img.shields.io/github/stars/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 
-
-![Project Image](https://i.imgur.com/bW12MWN.gif)
-
-
-> Unofficial Riot Games Launcher.
-
----
-## Author Info
-
-- Twitter - [@Sexus445](https://twitter.com/Sexus445)
-- Website - [José López](https://github.com/Eliosth)
 ---
 
-### Table of Contents
-
-
-- [Description](#description)
-- [Built With](#built-with)
-- [How To Use](#how-to-use)
-- [Downloads](#downloads)
-- [API](#api)
-- [Riot Copyright](#Copyright)
+> URGL.
 
 ---
+
+# Team
+
+### Eliosth - Developer
+### lunepassages - Concept Art
+-----
+
+### Languages, Idiomas
+
+- [Enlgish](#en)
+- [Español](#es)
+
+
+# English
 
 ## Description
 
 This project is carried out with the sole purpose of placing all the games made by <a href="https://www.riotgames.com/en"> Riot Games </a> on a single platform for easy access.
 
-#### Built With
+### Table of Contents
 
-- C#
-- Windows Form
-
-
-[Back To The Top](#unofficial-riot-games-launcher)
-
+- [How To Use](#how-to-use)
+- [Lastest Release](#lastest-release)
+- [Node Modules Used ](#node-modules)
 ---
+
+# [Lastest Release](https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/releases)
+
+
 
 ## How To Use
 
-After installation, it is only necessary to grant the path to the Riot Games folder (taking into account that all the games provided by <a href="https://www.riotgames.com/en"> Riot Games </a> are in their default folder and not in separate directories).
-
----
-
-
-
-## Downloads
-
-<a href="https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/releases">Lastest Release</a>
+Simply install the file and the program will automatically detect the path to C: "Riot Games", if you have any problem visit the following link http://urgl.me/Support.html
 
 
 ---
 
+## Node Modules
 
-#### API
-<a href="https://www.nuget.org/packages/WindowsAPICodePack-Core">WindowsAPICodePack-Core 1.1.2</a>
+- [Electron](https://www.electronjs.org/docs/tutorial/installation)
+
+- [electron-is-dev](https://github.com/sindresorhus/electron-is-dev)
+
+- [electron-log](https://github.com/megahertz/electron-log)
+
+- [electron-updater](https://yarnpkg.com/package/electron-updater)
+
+- [Sweet Alert 2](https://sweetalert2.github.io/)
+
+### Transparent Tittle Bar by  binaryfunt 
+
+ [electron-seamless-titlebar-tutorial](https://github.com/binaryfunt/electron-seamless-titlebar-tutorial)
+
 ---
 
-## CopyRight
+ # MIT LICENSE
+ ## All game assets belongs to [Riot Games](https://www.riotgames.com/)
+----
+[Back To Top](#unofficial-riot-games-launcher)
 
-“All the images, and names used in the project belong to their respective owners and I or this profile does not claim any right over them.
 
-Copyright Disclaimer under section 107 of the Copyright Act of 1976, allowance is made for “fair use” for purposes such as criticism, comment, news reporting, teaching, scholarship, education and research. Fair use is a use permitted by copyright statute that might otherwise be infringing.”
+----
 
 
-[Back To The Top](#unofficial-riot-games-launcher)
 
+
+## Descripción
+
+Este proyecto se lleva a cabo con el único propósito de colocar todos los juegos creados por <a href="https://www.riotgames.com/en"> Riot Games </a> en una única plataforma para facilitar el acceso.
+
+### Tabla de contenido
+
+- [Cómo usar](#cómo usar)
+
+- [Último lanzamiento](#último lanzamiento)
+- [Módulos de nodo utilizados](#módulos de nodo)
+---
+
+# [Último lanzamiento](https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/releases)
+
+
+
+
+## Cómo utilizar
+
+Simplemente instale el archivo y el programa detectará automáticamente la ruta a C: "Riot Games", si tiene algún problema visite el siguiente enlace http://urgl.me/Support.html
+
+
+---
+
+## Módulos de node js
+
+- [Electron](https://www.electronjs.org/docs/tutorial/installation)
+
+- [electron-is-dev](https://github.com/sindresorhus/electron-is-dev)
+
+- [electron-log](https://github.com/megahertz/electron-log)
+
+- [electron-updater](https://yarnpkg.com/package/electron-updater)
+
+- [Sweet Alert 2](https://sweetalert2.github.io/)
+
+
+### Barra de título transparente por binaryfunt
+
+ [tutorial-barra-título-transparente-electron](https://github.com/binaryfunt/electron-seamless-titlebar-tutorial)
+
+---
+
+ # LICENCIA MIT
+ ## Todos los activos del juego pertenecen a [Riot Games](https://www.riotgames.com/)
+----
+[Volver arriba](#unofficial-riot-games-launcher)
 
 
