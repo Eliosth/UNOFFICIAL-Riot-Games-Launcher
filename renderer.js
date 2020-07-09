@@ -517,7 +517,7 @@ function checkFolderGame(directory) {
 
 
     try {
-        fs.accessSync(directory + '\\Legends of Runeterra');
+        fs.accessSync(directory + '\\LoR');
         document.getElementById("playBacon").innerHTML = 'PLAY';
     } catch (error) {
 
