@@ -32,7 +32,7 @@
 
 ### Languages, Idiomas
 
-- [Enlgish](#english)
+- [English](#english)
 - [Español](#español)
 ---
 
