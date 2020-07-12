@@ -55,7 +55,7 @@ This project is carried out with the sole purpose of placing all the games made 
 
 ## How To Use
 
-Simply install the file and the program will automatically detect the path to C: "Riot Games", if you have any problem visit the following link http://urgl.me/Support.html
+Simply install the file and the program will automatically detect the path to C: "Riot Games", if you have any problem visit the following link https://urgl.me/Support.html
 
 
 ---
