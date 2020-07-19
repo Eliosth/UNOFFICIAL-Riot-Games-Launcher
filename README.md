@@ -14,6 +14,9 @@
 ![Valorant](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/ValorantLauncher.jpg?alt=media&token=91a09508-0f28-4004-8dc5-3550fa8aa933)
 ---
 ![Settings](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/AboutLauncher.jpg?alt=media&token=1f9e8fc4-f2b6-4c57-ac11-7b131c3149ef)
+---
+![Tray](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/trayIcon.gif?alt=media&token=804e0e9e-3ad0-48c5-8722-04e6477e4651)
+
 
 
 
