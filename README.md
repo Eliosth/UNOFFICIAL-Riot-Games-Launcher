@@ -7,13 +7,11 @@
 
 # Preview
 
-![League](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/LeagueLauncher.jpg?alt=media&token=15333262-2452-4f21-88ed-8ceb120ccc11)
+![League](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/LeagueLauncher.jpg?alt=media&token=309d94c6-f5de-4599-ae19-c20dc271b60a)
 ---
-![Bacon](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/BaconLauncher.jpg?alt=media&token=fe415bf7-4918-4a42-b404-ca7c3822a5c1)
+![Bacon](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/BaconLauncher.jpg?alt=media&token=9af0a284-3bfc-4613-9f7e-d9dd6db00b3c)
 ---
-![Valorant](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/ValorantLauncher.jpg?alt=media&token=91a09508-0f28-4004-8dc5-3550fa8aa933)
----
-![Settings](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/AboutLauncher.jpg?alt=media&token=1f9e8fc4-f2b6-4c57-ac11-7b131c3149ef)
+![Valorant](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/ValorantLauncher.jpg?alt=media&token=ddcdeab7-cf71-4811-bbe5-a908a6d0655b)
 ---
 ![Tray](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/trayIcon.gif?alt=media&token=804e0e9e-3ad0-48c5-8722-04e6477e4651)
 
