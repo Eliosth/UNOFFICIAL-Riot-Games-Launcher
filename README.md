@@ -7,13 +7,17 @@
 
 # Preview
 
-![League](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/LeagueLauncher.jpg?alt=media&token=309d94c6-f5de-4599-ae19-c20dc271b60a)
+![Splash](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/Splash.JPG?token=AHF2IYNGLL5IN5SMR4KSK6K7HVV7M)
 ---
-![Bacon](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/BaconLauncher.jpg?alt=media&token=9af0a284-3bfc-4613-9f7e-d9dd6db00b3c)
+![News](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/News.JPG?token=AHF2IYKQMG4XW6RVRENHSN27HVWB6)
 ---
-![Valorant](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/ValorantLauncher.jpg?alt=media&token=ddcdeab7-cf71-4811-bbe5-a908a6d0655b)
+![League](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/LeagueLauncher.jpg?token=AHF2IYLKMWYNG3LYQ5EXEYS7HVWD6)
 ---
-![Tray](https://firebasestorage.googleapis.com/v0/b/farmgo-1c7d0.appspot.com/o/trayIcon.gif?alt=media&token=804e0e9e-3ad0-48c5-8722-04e6477e4651)
+![Bacon](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/BaconLauncher.jpg?token=AHF2IYKC33KAD5FTKUFZOOC7HVWFS)
+---
+![Valorant](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/ValorantLauncher.jpg?token=AHF2IYO2TD2I7E2XOAE6SGK7HVWFW)
+---
+![Tray](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/trayMenu.jpg?token=AHF2IYJHHM3JGGCTTKAOVXK7HVWHG)
 
 
 
