@@ -1,14 +1,19 @@
 const electron = require("electron");
-const url = require("url");
-const path = require("path");
-const { autoUpdater } = require("electron-updater");
-const isDev = require('electron-is-dev');
-
-const { app, BrowserWindow } = electron;
+const { autoUpdater } = require('electron-updater');
+const log = require('electron-log');
+const { app, BrowserWindow, ipcMain } = electron;
 let mainWindow;
-
+let updateWindow;
 
 const gotTheLock = app.requestSingleInstanceLock()
+
+function sendStatusToWindow(text) {
+    log.info(text);
+    mainWindow.webContents.send('message', text);
+}
+
+
+
 
 if (!gotTheLock) {
     app.quit()
@@ -19,116 +24,95 @@ if (!gotTheLock) {
             if (mainWindow.isMinimized()) mainWindow.restore()
             mainWindow.focus()
         }
-    })
+    });
 
 
+    // configure logging
+    autoUpdater.logger = log;
+    autoUpdater.logger.transports.file.level = 'info';
+    log.info('App starting...');
 
 
     //listen to app to be ready
-    app.on("ready", function() {
-
-        //Trigger update check
-        if (!isDev) {
-            autoUpdater.checkForUpdates();
-        } else {
-            console.log('dev mode')
-        }
-        //create neww window
-        mainWindow = new BrowserWindow({
-            width: 1170,
-            height: 604,
-            'min-height': 1170,
-            'min-width': 604,
-            resizable: false,
-            frame: false,
-            webPreferences: {
-                nodeIntegration: true
-            }
-
-        });
-        //load html into window
-        mainWindow.loadURL(url.format({
-            pathname: path.join(__dirname, 'main.html'),
-            protocol: 'file',
-            slashes: true
-        }));
-        mainWindow.removeMenu(); // remove devTools
-
-        mainWindow.webContents.on('new-window', function(e, url) {
-            e.preventDefault();
-            electron.shell.openExternal(url);
-        });
+    //createWindow
+    app.whenReady().then(createWindow)
 
 
-    });
 
 }
 
-app.on('will-quit', () => {
-
-    app.quit()
-})
 
 
+function createWindow() {
+    //check if new updates are available
+    autoUpdater.checkForUpdatesAndNotify();
 
 
-//-------------------------------------------------------------------
-// Auto updates
-//-------------------------------------------------------------------
-
-//logs update 
-autoUpdater.logger = require("electron-log")
-autoUpdater.logger.transports.file.level = "info"
-
-
-autoUpdater.on('checking-for--update', () => {
-    console.log('checking for updates')
-});
-autoUpdater.on('update-available', info => {
-    let timerInterval
-    Swal.fire({
-        title: 'New update avaliable',
-        html: 'Preparing installation.',
-        timer: 2000,
-        timerProgressBar: true,
-        onBeforeOpen: () => {
-            Swal.showLoading()
-            timerInterval = setInterval(() => {
-                const content = Swal.getContent()
-                if (content) {
-                    const b = content.querySelector('b')
-                    if (b) {
-                        b.textContent = Swal.getTimerLeft()
-                    }
-                }
-            }, 100)
+    //create neww window
+    mainWindow = new BrowserWindow({
+        width: 1170,
+        height: 604,
+        'min-height': 1170,
+        'min-width': 604,
+        resizable: false,
+        frame: false,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true
         },
-        onClose: () => {
-            clearInterval(timerInterval)
-        }
-    }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('Correclty closed')
-        }
-    })
-});
-autoUpdater.on('update-not-available', info => {
-    alert('checking')
-});
-autoUpdater.on('error', err => {
+        enableRemoteModule: true
 
-});
-autoUpdater.on('download-progress', progressObj => {
+    });
+    //load html into window
+    mainWindow.loadFile('index.html');
+    mainWindow.removeMenu(); // remove devTools
 
-    swal({
-        title: 'Downloading',
-        text: `Download speed: ${progressObj.bytesPerSecond} - Downloaded ${progressObj.percent}% (${progressObj.transferred} + '/' + ${progressObj.total} + )`,
-        type: 'warning',
-        showConfirmButton: false
+    mainWindow.webContents.on('new-window', function(e, url) {
+        e.preventDefault();
+        electron.shell.openExternal(url);
+    });
+
+
+    app.on('will-quit', () => {
+
+        app.quit()
     })
 
-});
-autoUpdater.on('update-downloaded', info => {
-    autoUpdater.quitAndInstall();
-});
+    app.on('window-all-closed', () => {
+
+
+        app.quit()
+    })
+
+
+
+    autoUpdater.on('update-available', (info) => {
+        updateBrowserwindow();
+    })
+    autoUpdater.on('update-not-available', (info) => {
+        mainWindow.show();
+    })
+    autoUpdater.on('update-downloaded', (info) => {
+        sendStatusToWindow('Download Complete!');
+        autoUpdater.quitAndInstall();
+    });
+}
+
+
+function updateBrowserwindow() {
+    updateWindow = new BrowserWindow({
+        width: 200,
+        height: 300,
+        resizable: false,
+        frame: false,
+        parent: mainWindow,
+        webPreferences: {
+            nodeIntegration: true
+        },
+        enableRemoteModule: true
+
+    });
+    //updateWindow.removeMenu(); // remove devTools
+
+    updateWindow.loadFile('updateWindow.html');
+}

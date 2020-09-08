@@ -34,7 +34,7 @@ body {
 
 #window-controls {
     display: grid;
-    grid-template-columns: repeat(3, 46px);
+    grid-template-columns: repeat(4, 46px);
     position: absolute;
     top: 0;
     right: 0;
@@ -51,15 +51,19 @@ body {
 }
 
 #min-button {
-    grid-column: 1;
+    grid-column: 3;
 }
 
 #help-button {
     grid-column: 2;
 }
 
+#setting-button {
+    grid-column: 1;
+}
+
 #close-button {
-    grid-column: 3;
+    grid-column: 4;
 }
 
 @media (-webkit-device-pixel-ratio: 1.5),
@@ -136,6 +140,15 @@ body {
     -webkit-user-select: none;
 }
 
+a {
+    /* user-drag: none; */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 ::selection {
     background: transparent;
     color: inherit;
@@ -144,4 +157,14 @@ body {
 ::-moz-selection {
     background: transparent;
     color: inherit;
+}
+
+.card-title {
+    font-size: 15px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.card-img-top {
+    height: 169px;
 }
