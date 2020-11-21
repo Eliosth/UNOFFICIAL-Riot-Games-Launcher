@@ -5,14 +5,10 @@
 
 ![Stars](https://img.shields.io/github/stars/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 
-# Preview
 
 ![Overview](https://raw.githubusercontent.com/Eliosth/Eliosth.github.io/master/images/banner1.jpg)
 ---
 
-> URGL.
-
----
 
 # Team
 
