@@ -13,7 +13,7 @@
 # Team
 
 ### Eliosth - Developer
-### lunepassage - Concept Artist
+### [lunepassage](https://www.reddit.com/user/lunepassage) - Concept Artist 
 -----
 
 
