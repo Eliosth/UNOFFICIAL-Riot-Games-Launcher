@@ -1,14 +1,14 @@
 # Unofficial Riot-Games-Launcher
 
+![Overview](https://raw.githubusercontent.com/Eliosth/Eliosth.github.io/master/images/banner1.jpg)
+---
+
 ![Issues](https://img.shields.io/github/issues/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 ![Forks](https://img.shields.io/github/forks/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 
 ![Stars](https://img.shields.io/github/stars/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
 
-
-![Overview](https://raw.githubusercontent.com/Eliosth/Eliosth.github.io/master/images/banner1.jpg)
 ---
-
 
 # Team
 
