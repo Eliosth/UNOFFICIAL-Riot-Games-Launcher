@@ -1,0 +1,52 @@
+.competencesicons {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.competencestitles {
+  font-size: 27px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.squareicons {
+  font-size: 13px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.competencesparagraph {
+  font-size: 13px;
+  max-width: 280px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .competencesboxesdown:hover {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 991px) {
+  .competencestitles {
+    font-size: 22px;
+    margin: 30px 0 30px 0;
+  }
+}
+
+.competencesboxesdown {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  border: 1px gray solid;
+}
+

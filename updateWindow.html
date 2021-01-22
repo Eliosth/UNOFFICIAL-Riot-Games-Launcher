@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Unofficial Riot Games Launcher</title>
+
+    <!-- Include the Borderless theme -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Blue-Navbar.css">
+    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
+    <link rel="stylesheet" href="assets/css/iframe-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Clean.css">
+
+</head>
+
+<body style="background-color: #2C3A4D; ">
+    <header id="titlebar">
+
+        <div id="drag-region">
+
+        </div>
+    </header>
+
+
+
+
+    <img src="assets/img/Rolling-1.7s-200px.svg" draggable="false">
+    <p style="text-align: center;color: white;" id="download-status"></p>
+    <script>
+        const {
+            ipcRenderer
+        } = require('electron');
+        ipcRenderer.on('message', function(event, text) {
+            document.getElementById("download-status").innerHTML = text;
+
+        });
+    </script>
+    <script src="assets/js/jquery.min.js "></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js "></script>
+
+
+
+
+</body>
+
+</html>
