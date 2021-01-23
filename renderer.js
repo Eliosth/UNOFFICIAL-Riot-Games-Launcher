@@ -36,7 +36,6 @@ var IconPath = path.join(__dirname, './assets/img/tray.ico'); //path to tray ico
 
 
 document.onreadystatechange = (event) => {
-    //getUpdates();
     firstRun();
     //readSettingsJson();
     locale();
@@ -124,7 +123,7 @@ function handleWindowControls() {
 
     document.getElementById("lol-patch-note-card").addEventListener("click", event => {
         audio.pause();
-        createBrowserWindow('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league)
+        window.open('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league)
 
     });
 
@@ -147,59 +146,27 @@ function handleWindowControls() {
         switch (key) {
             case 1:
                 choped = patch_note_link_league1.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             case 2:
-                createBrowserWindow(patch_note_link_league1);
+                window.open(patch_note_link_league1);
                 break;
             case 3:
                 choped = patch_note_link_league1.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             default:
-                createBrowserWindow('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league1)
+                window.open('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league1)
                 break;
         }
 
     });
 
-    // document.getElementById("tft-patch-note-card").addEventListener("click", event => {
-    //     audio.pause();
-    //     let key
-    //     let choped
-    //     if (patch_note_link_tft.indexOf('https://youtu.be/') > -1) {
-    //         key = 1
-    //     }
 
-    //     if (patch_note_link_tft.indexOf('https://twitch.amazon.com/tp/loot/') > -1) {
-    //         key = 2
-    //     }
-    //     if (patch_note_link_tft.indexOf('https://www.youtube.com/') > -1) {
-    //         key = 3
-    //     }
-
-    //     switch (key) {
-    //         case 1:
-    //             choped = patch_note_link_tft.slice(17, 28)
-    //             createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    //             break;
-    //         case 2:
-    //             createBrowserWindow(patch_note_link_tft);
-    //             break;
-    //         case 3:
-    //             choped = patch_note_link_tft.slice(32, 43)
-    //             createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    //             break;
-    //         default:
-    //             createBrowserWindow('https://teamfighttactics.leagueoflegends.com/' + newsLang + patch_note_link_tft)
-    //             break;
-    //     }
-
-    // });
 
     document.getElementById("bacon-patch-note-card").addEventListener("click", event => {
         audio.pause();
-        createBrowserWindow('https://playruneterra.com/' + newsLang + '/news')
+        window.open('https://playruneterra.com/' + newsLang + '/news')
 
     });
 
@@ -223,17 +190,17 @@ function handleWindowControls() {
         switch (key) {
             case 1:
                 choped = patch_note_link_valorant.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             case 2:
-                createBrowserWindow(patch_note_link_valorant);
+                window.open(patch_note_link_valorant);
                 break;
             case 3:
                 choped = patch_note_link_valorant.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             default:
-                createBrowserWindow('https://playvalorant.com/' + newsLang + patch_note_link_valorant)
+                window.open('https://playvalorant.com/' + newsLang + patch_note_link_valorant)
                 break;
         }
 
@@ -263,17 +230,17 @@ function handleWindowControls() {
         switch (key) {
             case 1:
                 choped = patch_note_link_valorant1.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             case 2:
-                createBrowserWindow(patch_note_link_valorant1);
+                window.open(patch_note_link_valorant1);
                 break;
             case 3:
                 choped = patch_note_link_valorant1.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             default:
-                createBrowserWindow('https://playvalorant.com/' + newsLang + patch_note_link_valorant1)
+                window.open('https://playvalorant.com/' + newsLang + patch_note_link_valorant1)
                 break;
         }
 
@@ -285,38 +252,22 @@ function handleWindowControls() {
     document.getElementById("lol-news-card").addEventListener("click", event => {
         audio.pause();
         let choped = lol_news_url.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
+        window.open('https://www.youtube.com/embed/' + choped);
     });
 
     document.getElementById("lol-news-card2").addEventListener("click", event => {
         audio.pause();
         let choped = lol_news_url1.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
+        window.open('https://www.youtube.com/embed/' + choped);
     });
 
     document.getElementById("lol-news-card3").addEventListener("click", event => {
         audio.pause();
         let choped = lol_news_url2.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
+        window.open('https://www.youtube.com/embed/' + choped);
     });
 
-    document.getElementById("lol-news-card4").addEventListener("click", event => {
-        audio.pause();
-        let choped = lol_news_url3.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    });
 
-    document.getElementById("lol-news-card5").addEventListener("click", event => {
-        audio.pause();
-        let choped = lol_news_url4.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    });
-
-    document.getElementById("lol-news-card6").addEventListener("click", event => {
-        audio.pause();
-        let choped = lol_news_url5.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    });
 
     //#endregion
 
@@ -1188,25 +1139,7 @@ function LolNews() {
             document.getElementById("lol-news-image2").src = (body.result.pageContext.data.sections[0].props.articles[2].imageUrl);
 
 
-            lol_news_url3 = (body.result.pageContext.data.sections[0].props.articles[3].link.url)
 
-            document.getElementById("lol-news-title3").innerHTML = (body.result.pageContext.data.sections[0].props.articles[3].title);
-            document.getElementById("lol-news-image3").src = (body.result.pageContext.data.sections[0].props.articles[3].imageUrl);
-
-
-
-
-            lol_news_url4 = (body.result.pageContext.data.sections[0].props.articles[4].link.url)
-
-            document.getElementById("lol-news-title4").innerHTML = (body.result.pageContext.data.sections[0].props.articles[4].title);
-            document.getElementById("lol-news-image4").src = (body.result.pageContext.data.sections[0].props.articles[4].imageUrl);
-
-
-
-            lol_news_url5 = (body.result.pageContext.data.sections[0].props.articles[5].link.url)
-
-            document.getElementById("lol-news-title5").innerHTML = (body.result.pageContext.data.sections[0].props.articles[5].title);
-            document.getElementById("lol-news-image5").src = (body.result.pageContext.data.sections[0].props.articles[5].imageUrl);
         } catch (error) {
 
         }
@@ -1215,26 +1148,6 @@ function LolNews() {
     });
 
 
-
-}
-
-function createBrowserWindow(url) {
-
-    const BrowserWindow = remote.BrowserWindow;
-    const window = new BrowserWindow({
-        height: 600,
-        width: 800,
-        resizable: false,
-        parent: win
-
-    });
-    window.removeMenu(); //remove devTools
-
-    window.loadURL(url);
-
-    window.on('close', function() {
-        audio.play();
-    });
 
 }
 
