@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="button" id="help-button">
-                    <a href="http://urgl.me/Support.html" target="_blank">
+                    <a href="https://jslquintero.gitbook.io/unofficial-riot-games-launcher/untitled" target="_blank">
                         <img class="" style="cursor:pointer;" src="icons/help-w-30.png" draggable="false" /></a>
                 </div>
 
@@ -101,7 +101,8 @@
                         style="margin-top: 40px;"></li>
 
                 <li class="text-left">
-                    <p sdraggable="false" id="app-ver" style="margin-top: 120px;margin-left:5px;color:white;"></p>
+                    <p sdraggable="false" id="app-ver"
+                        style="margin-top: 145px;margin-left:5px;color:white; cursor: pointer;"></p>
                 </li>
 
 
@@ -114,41 +115,22 @@
         style="width: 1280px;height: 720px;margin-left: 120px; opacity: 1;background-color: #2C3A4D; ">
 
         <div id="defaultopen" width="1074px" height="605px" class="tabcontent">
-            <img draggable="false" class="img-fluid" src="assets/img/background.png">
+            <img draggable="false" class="img-fluid" src="assets/img/background-default.jpg">
         </div>
 
         <div id="home" width="1074px" height="605px" class="tabcontent">
-            <img draggable="false" class="img-fluid" src="assets/img/background.png">
+            <img draggable="false" class="img-fluid" src="assets/img/blur-bg.jpg">
 
 
-            <div id="news-board" style="margin-top: -700px; margin-left: 60px;">
-
-
-
-
-                <!-- card -->
-
-                <div class="card " id="lol-news-card"
-                    style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
-
-
-                    <div class="card-body">
-                        <h5 class="card-title" id="lol-news-title"
-                            style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
-
-                    </div>
-                    <img class="card-img-bot" id="lol-news-image" draggable="false">
+            <div id="news-board" style="margin-top: -100px; margin-left: 60px;">
 
 
 
-                </div>
-                <!-- card end -->
 
+                <!-- card top -->
 
-
-                <!-- card 2 -->
                 <div class="card " id="lol-news-card2"
-                    style="margin-top: 85px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+                    style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
 
 
                     <div class="card-body">
@@ -158,24 +140,43 @@
                     </div>
                     <img class="card-img-bot" id="lol-news-image1" draggable="false">
 
+
+
                 </div>
-                <!-- card 2 end -->
+                <!-- card top end -->
 
 
-                <!-- card 3 -->
-                <div class="card  " id="lol-news-card3"
-                    style="margin-top: -300px;width: 600px;height: 340px;margin-left: 425px;opacity: 100%;background-color: #2C3A4D;">
-                    <img class="card-img-top" id="lol-news-image2" draggable="false"
-                        style="width:600px; height: 300px; ">
+
+                <!-- card bottom -->
+                <div class="card " id="lol-news-card3"
+                    style="margin-top: 85px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+
                     <div class="card-body">
                         <h5 class="card-title" id="lol-news-title2"
+                            style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                    </div>
+                    <img class="card-img-bot" id="lol-news-image2" draggable="false">
+
+                </div>
+                <!-- card bottom end -->
+
+
+                <!-- card big view -->
+                <div class="card  " id="lol-news-card"
+                    style="margin-top: -300px;width: 600px;height: 340px;margin-left: 425px;opacity: 100%;background-color: #2C3A4D;">
+                    <img class="card-img-top" id="lol-news-image" draggable="false"
+                        style="width:600px; height: 300px; ">
+                    <div class="card-body">
+                        <h5 class="card-title" id="lol-news-title"
                             style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
 
                     </div>
 
 
                 </div>
-                <!-- card 3 end -->
+                <!-- card big view end -->
 
 
 
@@ -358,39 +359,25 @@
         <div id="Settings" width="1074px" height="605px" class="tabcontent" style="text-align: center;">
 
 
-            <div class="team-clean" style="margin-top:32px">
+            <div class="team-clean"
+                style="margin-top:50px; width: auto;margin-left: 180px; background-color: #2C3A4D; color: white;">
                 <div class="container">
 
                     <div class="row people">
 
 
-
+                        <!-- league locale -->
                         <div class="col-md-6 col-lg-4 item">
 
 
                             <img id="league-locale-settings" onclick="openPanel(event, 'localeRegion')"
-                                style="cursor: pointer;" src="assets/img/icons8_world_129px.png">
+                                style="cursor: pointer;" src="assets/img/icons8_world_129px.png" draggable="false">
 
                             <h3 class="name" id="league-locale-title"></h3>
                         </div>
+                        <!-- league locale -->
 
-                        <div class="col-md-6 col-lg-4 item">
-                            <h3 class="name">Riot Games Folder</h3>
-                            <p class="title" id="displayPath"></p>
-                            <button class="btn btn-dark" type="button" style="font-size: 19px;margin-top:50px;"
-                                id="selectFolder"></button>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4 item">
-                            <h3 class="name" id="sounds"></h3>
-                           
-                            <label for="muteCheck" id="disable-sounds"></label><br>
-                            <img src="assets/img/icons8_audio_129px.png" id="volume-controller" draggable="false"
-                                style="cursor: pointer;" data-toggle="tooltip" data-toggle="tooltip"
-                                data-placement="top" title="Volume">
-
-                        </div>
-
+                        <!-- language -->
                         <div class="col-md-6 col-lg-4 item">
                             <h3 class="name" id="language"></h3>
                             <select class="form-control  form-control-sm" id="language-id"
@@ -419,6 +406,39 @@
                                 style="width: 90%;margin-left: 10%; margin-top: 5%;" id="apply-lang"></button>
 
                         </div>
+                        <!-- language end -->
+
+
+
+                        <!-- white space -->
+                        <div class="col-md-6 col-lg-4 item">
+
+
+                        </div>
+                        <!-- white space end -->
+
+
+                        <!-- path  -->
+                        <div class="col-md-6 col-lg-4 item">
+                            <h3 class="name">Riot Games Folder</h3>
+                            <p class="title" id="displayPath"></p>
+                            <button class="btn btn-success" type="button" style="font-size: 19px;margin-top:20px;"
+                                id="selectFolder"></button>
+                        </div>
+                        <!-- path end -->
+
+                        <!-- sound -->
+                        <div class="col-md-6 col-lg-4 item">
+                            <h3 class="name" id="sounds"></h3>
+
+
+                            <img src="assets/img/icons8_audio_129px.png" id="volume-controller" draggable="false"
+                                style="cursor: pointer;" data-toggle="tooltip" data-toggle="tooltip"
+                                data-placement="top" title="Volume">
+
+                        </div>
+                        <!-- sound end -->
+
                     </div>
 
 

@@ -34,9 +34,9 @@ if (!gotTheLock) {
 
 
     //development only 
-    try {
-        require('electron-reloader')(module);
-    } catch { }
+    // try {
+    //     require('electron-reloader')(module);
+    // } catch { }
 
 
     //listen to app to be ready
@@ -121,4 +121,5 @@ function updateBrowserwindow() {
     //updateWindow.removeMenu(); // remove devTools
 
     updateWindow.loadFile('updateWindow.html');
+    updateWindow.focus();
 }

@@ -383,21 +383,19 @@ function handleWindowControls() {
     //#endregion
 
     //#region PlayIcons
-    audio = new Audio('./assets/music/play-sfx.ogg');
-    audio.volume = audioVolume;
 
     document.getElementById("playLeague").addEventListener("click", event => {
-        playSFX.play();
+
         launchLeague();
     });
 
     document.getElementById("playBacon").addEventListener("click", event => {
-        playSFX.play();
+
         launchBacon()
     });
 
     document.getElementById("playValorant").addEventListener("click", event => {
-        playSFX.play();
+
         launchValorant();
     });
 
@@ -437,9 +435,9 @@ function handleWindowControls() {
 
     });
 
-    // document.getElementById("app-ver").addEventListener("click", event => {
-    //     ChangeLog();
-    // });
+    document.getElementById("app-ver").addEventListener("click", event => {
+        window.open('https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/releases');
+    });
 
 
     //#endregion
@@ -1147,6 +1145,7 @@ function trayIconOption() {
 
         tray.on('double-click', function () {
             win.show();
+            audio.play();
         })
 
     } catch (error) {
@@ -1154,7 +1153,7 @@ function trayIconOption() {
             icon: 'error',
             title: 'Oops...',
             text: 'Something went wrong! ' + error.toString(),
-            footer: '<a href=http://urgl.me/Support.html target=_blank>Report an issue</a>'
+            footer: '<a href=https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/issues target=_blank>Report an issue</a>'
         })
     }
 
@@ -1279,7 +1278,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Zvuky' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Zakázat zvuky' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Jazyky' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplikovat' //Apply
             document.getElementById("apply-changes").innerHTML = 'Uložit' //Save 
@@ -1311,7 +1310,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Geräusche' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Deaktivieren Sie Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Sprachen' //Languages
             document.getElementById("apply-lang").innerHTML = 'Anwenden' //Apply
             document.getElementById("apply-changes").innerHTML = 'sparen' //Save 
@@ -1337,7 +1336,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Ακούγεται' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Απενεργοποίηση ήχων' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Γλώσσες' //Languages
             document.getElementById("apply-lang").innerHTML = 'Ισχύουν' //Apply
             document.getElementById("apply-changes").innerHTML = 'Αποθηκεύσετε' //Save 
@@ -1364,7 +1363,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Search'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sounds' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disable Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Languages' //Languages
             document.getElementById("apply-lang").innerHTML = 'Apply' //Apply
             document.getElementById("apply-changes").innerHTML = 'Save' //Save 
@@ -1388,7 +1387,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Search'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sounds' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disable Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Languages' //Languages
             document.getElementById("apply-lang").innerHTML = 'Apply' //Apply
             document.getElementById("apply-changes").innerHTML = 'Save' //Save 
@@ -1412,7 +1411,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Search'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sounds' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disable Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Languages' //Languages
             document.getElementById("apply-lang").innerHTML = 'Apply' //Apply
             document.getElementById("apply-changes").innerHTML = 'Save' //Save 
@@ -1436,7 +1435,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Buscar'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sonidos' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Desactivar Sonidos' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Idiomas' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplicar' //Apply
             document.getElementById("apply-changes").innerHTML = 'Guardar' //Save 
@@ -1461,7 +1460,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Buscar'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sonidos' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Desactivar Sonidos' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Idiomas' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplicar' //Apply
             document.getElementById("apply-changes").innerHTML = 'Guardar' //Save 
@@ -1486,7 +1485,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Des sons' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Désactiver les sons' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Langues' //Languages
             document.getElementById("apply-lang").innerHTML = 'Appliquer' //Apply
             document.getElementById("apply-changes").innerHTML = 'sauver' //Save 
@@ -1511,7 +1510,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'hangok' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Hangok letiltása' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Nyelvek' //Languages
             document.getElementById("apply-lang").innerHTML = 'Alkalmaz' //Apply
             document.getElementById("apply-changes").innerHTML = 'Mentés' //Save 
@@ -1536,7 +1535,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Suoni' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disabilita i suoni' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Le lingue' //Languages
             document.getElementById("apply-lang").innerHTML = 'Applicare' //Apply
             document.getElementById("apply-changes").innerHTML = 'Salva' //Save 
@@ -1561,7 +1560,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = '検索'; //select Folder
 
             document.getElementById("sounds").innerHTML = '音' //Sounds
-            document.getElementById("disable-sounds").innerHTML = '音を無効にする' //Disable Sounds
+
             document.getElementById("language").innerHTML = '言語' //Languages
             document.getElementById("apply-lang").innerHTML = '申し込む' //Apply
             document.getElementById("apply-changes").innerHTML = '保存する' //Save 
@@ -1588,7 +1587,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = '소리' //Sounds
-            document.getElementById("disable-sounds").innerHTML = '소리 비활성화' //Disable Sounds
+
             document.getElementById("language").innerHTML = '언어' //Languages
             document.getElementById("apply-lang").innerHTML = '대다' //Apply
             document.getElementById("apply-changes").innerHTML = '저장' //Save 
@@ -1614,7 +1613,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Dźwięki' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Wyłącz dźwięki' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Języki' //Languages
             document.getElementById("apply-lang").innerHTML = 'Zastosować' //Apply
             document.getElementById("apply-changes").innerHTML = 'Zapisać' //Save 
@@ -1638,7 +1637,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Pesquisar'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sons' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Desativar sons' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'línguas' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplique' //Apply
             document.getElementById("apply-changes").innerHTML = 'Salve' //Save 
@@ -1664,7 +1663,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Sunete' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Dezactivați sunetele' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Limbile' //Languages
             document.getElementById("apply-lang").innerHTML = 'aplica' //Apply
             document.getElementById("apply-changes").innerHTML = 'Salvați' //Save 
@@ -1688,7 +1687,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Поиск'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Звуки' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Отключить звуки' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Языки' //Languages
             document.getElementById("apply-lang").innerHTML = 'Подать заявление' //Apply
             document.getElementById("apply-changes").innerHTML = 'Сохранить' //Save 
@@ -1715,7 +1714,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'sesler' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Sesleri devre dışı bırak' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Diller' //Languages
             document.getElementById("apply-lang").innerHTML = 'Uygulamak' //Apply
             document.getElementById("apply-changes").innerHTML = 'Kayıt etmek' //Save 
