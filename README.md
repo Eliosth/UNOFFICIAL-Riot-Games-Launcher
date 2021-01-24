@@ -1,6 +1,6 @@
 # Unofficial Riot-Games-Launcher
 
-![Overview](https://github.com/Eliosth/Eliosth.github.io/blob/master/images/banner1.jpg)
+![Overview](https://raw.githubusercontent.com/Eliosth/ImageStorage/master/LeagueLauncher.jpg?token=AHF2IYJSMDIP46ACW3US4GDAC2BSQ)
 ---
 
 ![Issues](https://img.shields.io/github/issues/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
