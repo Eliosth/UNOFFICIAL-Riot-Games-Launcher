@@ -14,7 +14,7 @@ const { Menu, Tray, dialog, app } = remote;
 var newsLang;
 var patch_note_link_league, patch_note_link_league1, patch_note_link_tft, leagueGamePath;
 //let patch_note_link_bacon;
-var patch_note_link_valorant, patch_note_link_valorant1 ;
+var patch_note_link_valorant, patch_note_link_valorant1;
 var lol_news_url, lol_news_url1, lol_news_url2, lol_news_url3, lol_news_url4, lol_news_url5;
 //region and locale
 var default_locale, default_region;
@@ -27,7 +27,6 @@ var close_title, close_ok, close_cancel, invalid_path_message, succes_title, suc
 var tray;
 var tmpDir = null; //storage temporary folder path after selecting it from dialog
 var dir; //write his current value into gamePath inside settings.json also stores  the value from gamePath
-var audioOptions; // storage sound from settings.json
 var audio = new Audio();
 var audioVolume;
 var IconPath = path.join(__dirname, './assets/img/tray.ico'); //path to tray icon
@@ -43,7 +42,7 @@ document.onreadystatechange = (event) => {
     LeaguePatchNews();
     BaconPatchNews();
     ValorantPatchNews();
-  
+
 
 
 
@@ -56,16 +55,6 @@ document.onreadystatechange = (event) => {
         document.getElementById('app-ver').innerHTML = 'ver ' + app.getVersion();
 
         document.getElementById('displayPath').innerHTML = dir
-
-
-        if (audioOptions == true) {
-            document.getElementById("muteCheck").checked = false;
-        } else {
-            document.getElementById("muteCheck").checked = true;
-        }
-
-
-
 
 
 
@@ -246,7 +235,7 @@ function handleWindowControls() {
 
     });
 
-  
+
 
 
     document.getElementById("lol-news-card").addEventListener("click", event => {
@@ -315,22 +304,6 @@ function handleWindowControls() {
 
     });
 
-    document.getElementById("muteCheck").addEventListener('change', function() {
-
-
-        if (this.checked) {
-
-            audioOptions = false
-
-            WriteJson();
-
-        } else {
-
-            audioOptions = true
-
-            WriteJson();
-        }
-    });
 
 
     document.getElementById("league-locale-settings").addEventListener("click", event => {
@@ -348,7 +321,7 @@ function handleWindowControls() {
         if (region_id.options[i].value !== "default-region") {
             default_region = region_id.options[i].value;
             WriteJson();
-            child(leagueGamePath + '\\LeagueClient.exe', function(err) {
+            child(leagueGamePath + '\\LeagueClient.exe', function (err) {
                 if (err) {
                     Swal.fire(
                         'Error ',
@@ -364,7 +337,7 @@ function handleWindowControls() {
         if (locale_id[j].value !== "default-locale") {
             default_locale = locale_id[j].value;
             WriteJson();
-            child(leagueGamePath + '\\LeagueClient.exe', function(err) {
+            child(leagueGamePath + '\\LeagueClient.exe', function (err) {
                 if (err) {
                     Swal.fire(
                         'Error ',
@@ -394,7 +367,7 @@ function handleWindowControls() {
             LeaguePatchNews();
             BaconPatchNews();
             ValorantPatchNews();
-          
+
             locale();
 
         } catch (error) {
@@ -410,19 +383,21 @@ function handleWindowControls() {
     //#endregion
 
     //#region PlayIcons
-    var playButtonSFX = new Audio('assets/music/play-sfx.mp3');
+    audio = new Audio('./assets/music/play-sfx.ogg');
+    audio.volume = audioVolume;
+
     document.getElementById("playLeague").addEventListener("click", event => {
-        playButtonSFX.play();
+        playSFX.play();
         launchLeague();
     });
 
     document.getElementById("playBacon").addEventListener("click", event => {
-        playButtonSFX.play();
+        playSFX.play();
         launchBacon()
     });
 
     document.getElementById("playValorant").addEventListener("click", event => {
-        playButtonSFX.play();
+        playSFX.play();
         launchValorant();
     });
 
@@ -432,94 +407,40 @@ function handleWindowControls() {
     document.getElementById("lol_sidebar").addEventListener("click", event => {
 
         audioPlayer("League")
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("lor_sidebar").addEventListener("click", event => {
 
         audioPlayer("Bacon")
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("valorant_sidebar").addEventListener("click", event => {
         audioPlayer("Valorant")
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("settings_sidebar").addEventListener("click", event => {
         audio.pause();
         audio.currentTime = 0;
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("home_sidebar").addEventListener("click", event => {
         audio.pause();
         audio.currentTime = 0;
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
     });
 
     // document.getElementById("app-ver").addEventListener("click", event => {
     //     ChangeLog();
     // });
 
-
-
-    //#region Mouse on Hover
-    var hoverSidebarButtonsSFX = new Audio('assets/music/hover-sfx.mp3');
-    document.getElementById("lol_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-
-        document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_color_96px.png"
-    });
-
-    document.getElementById("lol_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-        document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
-    });
-
-    document.getElementById("lor_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-        document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_color_96px.png"
-    });
-
-    document.getElementById("lor_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-        document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
-    });
-
-    document.getElementById("valorant_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-        document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_colors_96px.png"
-
-    });
-
-    document.getElementById("valorant_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-        document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
-    });
-
-    document.getElementById("home_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-
-
-    });
-
-    document.getElementById("home_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-
-    });
-
-    document.getElementById("league-locale-settings").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-    });
-    document.getElementById("league-locale-settings").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-    });
 
     //#endregion
 
@@ -551,7 +472,7 @@ function firstRun() {
 
         try {
             var settingsString = JSON.stringify(settingsJson, null, 2);
-            fs.writeFile('settings.json', settingsString, (err) => {});
+            fs.writeFile('settings.json', settingsString, (err) => { });
             location.reload();
 
 
@@ -587,7 +508,7 @@ function readSettingsJson() {
         var configuration = JSON.parse(dataJson);
         dir = configuration.gamePath;
         audioVolume = configuration.volume;
-        audioOptions = configuration.sound;
+
         default_locale = configuration.locale;
         default_region = configuration.region;
         leagueGamePath = configuration.leagueDirectory;
@@ -657,7 +578,6 @@ function readSettingsJson() {
 function WriteJson() {
     var config = {
         gamePath: dir.toString(),
-        sound: audioOptions,
         volume: audioVolume,
         locale: default_locale,
         region: default_region,
@@ -848,7 +768,7 @@ function writeYaml() {
         data.install.globals.region = default_region;
 
         let yamlStr = yaml.safeDump(data);
-        fs.writeFileSync(leagueGamePath + '\\Config\\LeagueClientSettings.yaml', yamlStr, function(err, file) {
+        fs.writeFileSync(leagueGamePath + '\\Config\\LeagueClientSettings.yaml', yamlStr, function (err, file) {
             if (err) {
                 throw err;
             }
@@ -868,54 +788,51 @@ function writeYaml() {
 //#region  Audio Functions
 function audioPlayer(sound) {
 
-    if (audioOptions == true) {
-        var sw = sound;
 
-        switch (sw) {
-            case 'League':
+    var sw = sound;
 
-                audio.pause();
-                audio.currentTime = 0;
-                audio = new Audio('./assets/music/League.mp3');
-                audio.loop = true;
-                audio.volume = audioVolume;
-                audio.play();
+    switch (sw) {
+        case 'League':
 
-                break;
-            case 'Bacon':
+            audio.pause();
+            audio.currentTime = 0;
+            audio = new Audio('./assets/music/League.ogg');
+            audio.loop = true;
+            audio.volume = audioVolume;
+            audio.play();
 
-                audio.pause();
-                audio.currentTime = 0;
-                audio = new Audio('./assets/music/Bacon.mp3');
-                audio.loop = true;
-                audio.volume = audioVolume;
-                audio.play();
+            break;
+        case 'Bacon':
 
-                break;
-            case 'Valorant':
-                audio.pause();
-                audio.currentTime = 0;
-                audio = new Audio('./assets/music/Valorant.mp3');
-                audio.loop = true;
-                audio.volume = audioVolume;
-                audio.play();
-                break;
+            audio.pause();
+            audio.currentTime = 0;
+            audio = new Audio('./assets/music/Bacon.ogg');
+            audio.loop = true;
+            audio.volume = audioVolume;
+            audio.play();
 
-            default:
-                break;
-        }
+            break;
+        case 'Valorant':
+            audio.pause();
+            audio.currentTime = 0;
+            audio = new Audio('./assets/music/Valorant.ogg');
+            audio.loop = true;
+            audio.volume = audioVolume;
+            audio.play();
+            break;
+
+        default:
+            break;
     }
-
-
-
-
 }
+
+
 
 function audioVolumePlayer() {
 
 
 
-    (async() => {
+    (async () => {
 
         const { value: newVolume } = await Swal.fire({
             input: 'range',
@@ -988,7 +905,7 @@ function BaconPatchNews() {
     // request('https://playvalorant.com/page-data/en-us/news/game-updates/valorant-patch-notes-1-05/page-data.json', { json: true }, (err, res, body) => {
     //     if (err) { return console.log(err); }
     //     patch_note_title = (body.result.data.allContentstackArticles.nodes[0].title);
-    patch_note_image_url = ('https://dd.b.pvp.net/latest/set3/en_us/img/cards/03MT087-full.png');
+    patch_note_image_url = ('https://images.contentstack.io/v3/assets/blta38dcaae86f2ef5c/blt2d6c87d6bf028a60/5fdc239d02fd0c7d345f12d0/SN2021_LoR_Thumbnail_Banner.jpg');
     //     patch_note_link_valorant = (body.path);
 
 
@@ -1166,60 +1083,60 @@ function trayIconOption() {
     try {
         tray = new Tray(IconPath);
         let template = [{
-                label: 'League of Legends',
-                click: function() {
-                    launchLeague();
-                }
-
-            },
-            {
-                type: "separator"
-            },
-
-            {
-                label: 'Legends of Runeterra',
-                click: function() {
-                    launchBacon();
-                }
-            },
-            {
-                type: "separator"
-            },
-
-            {
-                label: 'VALORANT',
-                click: function() {
-                    launchValorant();
-                }
-            },
-            {
-                type: "separator"
-            },
-
-            {
-
-                label: 'Restart',
-
-                click: function() {
-                    app.quit();
-                    app.relaunch();
-                }
-
-            },
-
-            {
-                type: "separator"
-            },
-
-            {
-
-                label: 'Exit',
-
-                click: function() {
-
-                    app.quit();
-                }
+            label: 'League of Legends',
+            click: function () {
+                launchLeague();
             }
+
+        },
+        {
+            type: "separator"
+        },
+
+        {
+            label: 'Legends of Runeterra',
+            click: function () {
+                launchBacon();
+            }
+        },
+        {
+            type: "separator"
+        },
+
+        {
+            label: 'VALORANT',
+            click: function () {
+                launchValorant();
+            }
+        },
+        {
+            type: "separator"
+        },
+
+        {
+
+            label: 'Restart',
+
+            click: function () {
+                app.quit();
+                app.relaunch();
+            }
+
+        },
+
+        {
+            type: "separator"
+        },
+
+        {
+
+            label: 'Exit',
+
+            click: function () {
+
+                app.quit();
+            }
+        }
 
 
         ]
@@ -1228,7 +1145,7 @@ function trayIconOption() {
 
 
 
-        tray.on('double-click', function() {
+        tray.on('double-click', function () {
             win.show();
         })
 
@@ -1253,7 +1170,7 @@ function launchLeague() {
 
         var execArguments = ['--launch-product=league_of_legends', '--launch-patchline=live'];
 
-        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function(err, data) {
+        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function (err, data) {
             if (err) {
                 Swal.fire(
                     'Error ',
@@ -1282,7 +1199,7 @@ function launchBacon() {
 
         var execArguments = ['--launch-product=bacon', '--launch-patchline=live'];
 
-        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function(err, data) {
+        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function (err, data) {
             if (err) {
                 Swal.fire(
                     'Error ',
@@ -1316,7 +1233,7 @@ function launchValorant() {
 
         var execArguments = ['--launch-product=valorant', '--launch-patchline=live'];
 
-        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function(err, data) {
+        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function (err, data) {
             if (err) {
                 Swal.fire(
                     'Error ',

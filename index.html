@@ -131,7 +131,7 @@
                 <div class="card " id="lol-news-card"
                     style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
 
-                 
+
                     <div class="card-body">
                         <h5 class="card-title" id="lol-news-title"
                             style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
@@ -150,7 +150,7 @@
                 <div class="card " id="lol-news-card2"
                     style="margin-top: 85px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
 
-                   
+
                     <div class="card-body">
                         <h5 class="card-title" id="lol-news-title1"
                             style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
@@ -165,7 +165,8 @@
                 <!-- card 3 -->
                 <div class="card  " id="lol-news-card3"
                     style="margin-top: -300px;width: 600px;height: 340px;margin-left: 425px;opacity: 100%;background-color: #2C3A4D;">
-                    <img class="card-img-top" id="lol-news-image2" draggable="false" style="width:600px; height: 300px; ">
+                    <img class="card-img-top" id="lol-news-image2" draggable="false"
+                        style="width:600px; height: 300px; ">
                     <div class="card-body">
                         <h5 class="card-title" id="lol-news-title2"
                             style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
@@ -326,6 +327,8 @@
 
 
 
+
+
             <div style="margin-top: 185px;">
                 <p class="play-button"
                     style="color: rgb(247,235,235);margin-top: 100px;font-size: 64px;; font-family: 'Rubik Mono One', sans-serif;margin-left: 38px;width: 300px;height: 40px; cursor:pointer;"
@@ -345,6 +348,11 @@
                 </div>
             </div>
 
+
+
+        </div>
+
+
         </div>
 
         <div id="Settings" width="1074px" height="605px" class="tabcontent" style="text-align: center;">
@@ -356,19 +364,7 @@
                     <div class="row people">
 
 
-                        <div class="col-md-6 col-lg-4 item">
-                            <a href="https://github.com/Eliosth" target="_blank"><img
-                                    src="assets/img/icons8_github_129px.png" draggable="false">
-                            </a>
-                            <h3 class="name">Eliosth</h3>
-                            <p class="title">DEveloper</p>
-                        </div>
-                        <div class="col-md-6 col-lg-4 item">
-                            <a href="https://www.reddit.com/user/lunepassage/" target="_blank"><img
-                                    src="assets/img/icons8_reddit_129px.png" draggable="false"></a>
-                            <h3 class="name"><strong>lunepassage</strong></h3>
-                            <p class="title">Concept Artist</p>
-                        </div>
+
                         <div class="col-md-6 col-lg-4 item">
 
 
@@ -387,7 +383,7 @@
 
                         <div class="col-md-6 col-lg-4 item">
                             <h3 class="name" id="sounds"></h3>
-                            <input type="checkbox" id="muteCheck">
+                           
                             <label for="muteCheck" id="disable-sounds"></label><br>
                             <img src="assets/img/icons8_audio_129px.png" id="volume-controller" draggable="false"
                                 style="cursor: pointer;" data-toggle="tooltip" data-toggle="tooltip"
@@ -423,7 +419,7 @@
                                 style="width: 90%;margin-left: 10%; margin-top: 5%;" id="apply-lang"></button>
 
                         </div>
-                    </div>+
+                    </div>
 
 
                 </div>
@@ -512,6 +508,28 @@
             tablinks = document.getElementsByClassName("text-left tablinks");
 
             document.getElementById(panelName).style.display = "block";
+
+            switch (panelName) {
+                case "League":
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_color_96px.png"
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
+
+                    break;
+                case "Bacon":
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_color_96px.png"
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
+
+                    break;
+                case "Valorant":
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_colors_96px.png"
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    break;
+
+            }
+
             evt.currentTarget.className += " active";
         }
         // Get the element with id="defaultopen" and click on it
