@@ -14,7 +14,7 @@ const { Menu, Tray, dialog, app } = remote;
 var newsLang;
 var patch_note_link_league, patch_note_link_league1, patch_note_link_tft, leagueGamePath;
 //let patch_note_link_bacon;
-var patch_note_link_valorant, patch_note_link_valorant1, patch_note_link_valorant2;
+var patch_note_link_valorant, patch_note_link_valorant1;
 var lol_news_url, lol_news_url1, lol_news_url2, lol_news_url3, lol_news_url4, lol_news_url5;
 //region and locale
 var default_locale, default_region;
@@ -27,7 +27,6 @@ var close_title, close_ok, close_cancel, invalid_path_message, succes_title, suc
 var tray;
 var tmpDir = null; //storage temporary folder path after selecting it from dialog
 var dir; //write his current value into gamePath inside settings.json also stores  the value from gamePath
-var audioOptions; // storage sound from settings.json
 var audio = new Audio();
 var audioVolume;
 var IconPath = path.join(__dirname, './assets/img/tray.ico'); //path to tray icon
@@ -36,7 +35,6 @@ var IconPath = path.join(__dirname, './assets/img/tray.ico'); //path to tray ico
 
 
 document.onreadystatechange = (event) => {
-    //getUpdates();
     firstRun();
     //readSettingsJson();
     locale();
@@ -44,7 +42,7 @@ document.onreadystatechange = (event) => {
     LeaguePatchNews();
     BaconPatchNews();
     ValorantPatchNews();
-    TftPatchNNews();
+
 
 
 
@@ -57,16 +55,6 @@ document.onreadystatechange = (event) => {
         document.getElementById('app-ver').innerHTML = 'ver ' + app.getVersion();
 
         document.getElementById('displayPath').innerHTML = dir
-
-
-        if (audioOptions == true) {
-            document.getElementById("muteCheck").checked = false;
-        } else {
-            document.getElementById("muteCheck").checked = true;
-        }
-
-
-
 
 
 
@@ -124,7 +112,7 @@ function handleWindowControls() {
 
     document.getElementById("lol-patch-note-card").addEventListener("click", event => {
         audio.pause();
-        createBrowserWindow('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league)
+        window.open('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league)
 
     });
 
@@ -147,59 +135,27 @@ function handleWindowControls() {
         switch (key) {
             case 1:
                 choped = patch_note_link_league1.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             case 2:
-                createBrowserWindow(patch_note_link_league1);
+                window.open(patch_note_link_league1);
                 break;
             case 3:
                 choped = patch_note_link_league1.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             default:
-                createBrowserWindow('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league1)
+                window.open('https://na.leagueoflegends.com/' + newsLang + '/' + patch_note_link_league1)
                 break;
         }
 
     });
 
-    document.getElementById("tft-patch-note-card").addEventListener("click", event => {
-        audio.pause();
-        let key
-        let choped
-        if (patch_note_link_tft.indexOf('https://youtu.be/') > -1) {
-            key = 1
-        }
 
-        if (patch_note_link_tft.indexOf('https://twitch.amazon.com/tp/loot/') > -1) {
-            key = 2
-        }
-        if (patch_note_link_tft.indexOf('https://www.youtube.com/') > -1) {
-            key = 3
-        }
-
-        switch (key) {
-            case 1:
-                choped = patch_note_link_tft.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
-                break;
-            case 2:
-                createBrowserWindow(patch_note_link_tft);
-                break;
-            case 3:
-                choped = patch_note_link_tft.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
-                break;
-            default:
-                createBrowserWindow('https://teamfighttactics.leagueoflegends.com/' + newsLang + patch_note_link_tft)
-                break;
-        }
-
-    });
 
     document.getElementById("bacon-patch-note-card").addEventListener("click", event => {
         audio.pause();
-        createBrowserWindow('https://playruneterra.com/' + newsLang + '/news')
+        window.open('https://playruneterra.com/' + newsLang + '/news')
 
     });
 
@@ -223,17 +179,17 @@ function handleWindowControls() {
         switch (key) {
             case 1:
                 choped = patch_note_link_valorant.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             case 2:
-                createBrowserWindow(patch_note_link_valorant);
+                window.open(patch_note_link_valorant);
                 break;
             case 3:
                 choped = patch_note_link_valorant.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             default:
-                createBrowserWindow('https://playvalorant.com/' + newsLang + patch_note_link_valorant)
+                window.open('https://playvalorant.com/' + newsLang + patch_note_link_valorant)
                 break;
         }
 
@@ -263,93 +219,44 @@ function handleWindowControls() {
         switch (key) {
             case 1:
                 choped = patch_note_link_valorant1.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             case 2:
-                createBrowserWindow(patch_note_link_valorant1);
+                window.open(patch_note_link_valorant1);
                 break;
             case 3:
                 choped = patch_note_link_valorant1.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
+                window.open('https://www.youtube.com/embed/' + choped);
                 break;
             default:
-                createBrowserWindow('https://playvalorant.com/' + newsLang + patch_note_link_valorant1)
+                window.open('https://playvalorant.com/' + newsLang + patch_note_link_valorant1)
                 break;
         }
 
     });
 
-    document.getElementById("valorant-patch-note-card2").addEventListener("click", event => {
-        audio.pause();
-        let key;
-        let choped;
-        if (patch_note_link_valorant2.indexOf('https://youtu.be/') > -1) {
-            key = 1
-        }
 
-        if (patch_note_link_valorant2.indexOf('https://twitch.amazon.com/tp/loot/') > -1) {
-            key = 2
-        }
-
-        if (patch_note_link_valorant2.indexOf('https://www.youtube.com/') > -1) {
-            key = 3
-        }
-
-        switch (key) {
-            case 1:
-                choped = patch_note_link_valorant2.slice(17, 28)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
-                break;
-            case 2:
-                createBrowserWindow(patch_note_link_valorant2);
-                break;
-            case 3:
-                choped = patch_note_link_valorant2.slice(32, 43)
-                createBrowserWindow('https://www.youtube.com/embed/' + choped);
-                break;
-            default:
-                createBrowserWindow('https://playvalorant.com/' + newsLang + patch_note_link_valorant2)
-                break;
-        }
-
-    });
 
 
     document.getElementById("lol-news-card").addEventListener("click", event => {
         audio.pause();
         let choped = lol_news_url.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
+        window.open('https://www.youtube.com/embed/' + choped);
     });
 
     document.getElementById("lol-news-card2").addEventListener("click", event => {
         audio.pause();
         let choped = lol_news_url1.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
+        window.open('https://www.youtube.com/embed/' + choped);
     });
 
     document.getElementById("lol-news-card3").addEventListener("click", event => {
         audio.pause();
         let choped = lol_news_url2.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
+        window.open('https://www.youtube.com/embed/' + choped);
     });
 
-    document.getElementById("lol-news-card4").addEventListener("click", event => {
-        audio.pause();
-        let choped = lol_news_url3.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    });
 
-    document.getElementById("lol-news-card5").addEventListener("click", event => {
-        audio.pause();
-        let choped = lol_news_url4.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    });
-
-    document.getElementById("lol-news-card6").addEventListener("click", event => {
-        audio.pause();
-        let choped = lol_news_url5.slice(32, 43)
-        createBrowserWindow('https://www.youtube.com/embed/' + choped);
-    });
 
     //#endregion
 
@@ -397,22 +304,6 @@ function handleWindowControls() {
 
     });
 
-    document.getElementById("muteCheck").addEventListener('change', function() {
-
-
-        if (this.checked) {
-
-            audioOptions = false
-
-            WriteJson();
-
-        } else {
-
-            audioOptions = true
-
-            WriteJson();
-        }
-    });
 
 
     document.getElementById("league-locale-settings").addEventListener("click", event => {
@@ -430,7 +321,7 @@ function handleWindowControls() {
         if (region_id.options[i].value !== "default-region") {
             default_region = region_id.options[i].value;
             WriteJson();
-            child(leagueGamePath + '\\LeagueClient.exe', function(err) {
+            child(leagueGamePath + '\\LeagueClient.exe', function (err) {
                 if (err) {
                     Swal.fire(
                         'Error ',
@@ -446,7 +337,7 @@ function handleWindowControls() {
         if (locale_id[j].value !== "default-locale") {
             default_locale = locale_id[j].value;
             WriteJson();
-            child(leagueGamePath + '\\LeagueClient.exe', function(err) {
+            child(leagueGamePath + '\\LeagueClient.exe', function (err) {
                 if (err) {
                     Swal.fire(
                         'Error ',
@@ -476,7 +367,7 @@ function handleWindowControls() {
             LeaguePatchNews();
             BaconPatchNews();
             ValorantPatchNews();
-            TftPatchNNews();
+
             locale();
 
         } catch (error) {
@@ -492,19 +383,19 @@ function handleWindowControls() {
     //#endregion
 
     //#region PlayIcons
-    var playButtonSFX = new Audio('assets/music/play-sfx.mp3');
+
     document.getElementById("playLeague").addEventListener("click", event => {
-        playButtonSFX.play();
+
         launchLeague();
     });
 
     document.getElementById("playBacon").addEventListener("click", event => {
-        playButtonSFX.play();
+
         launchBacon()
     });
 
     document.getElementById("playValorant").addEventListener("click", event => {
-        playButtonSFX.play();
+
         launchValorant();
     });
 
@@ -514,94 +405,40 @@ function handleWindowControls() {
     document.getElementById("lol_sidebar").addEventListener("click", event => {
 
         audioPlayer("League")
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("lor_sidebar").addEventListener("click", event => {
 
         audioPlayer("Bacon")
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("valorant_sidebar").addEventListener("click", event => {
         audioPlayer("Valorant")
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("settings_sidebar").addEventListener("click", event => {
         audio.pause();
         audio.currentTime = 0;
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
+
+
     });
 
     document.getElementById("home_sidebar").addEventListener("click", event => {
         audio.pause();
         audio.currentTime = 0;
-        playButtonSFX.currentTime = 0;
-        playButtonSFX.play();
-    });
-
-    // document.getElementById("app-ver").addEventListener("click", event => {
-    //     ChangeLog();
-    // });
-
-
-
-    //#region Mouse on Hover
-    var hoverSidebarButtonsSFX = new Audio('assets/music/hover-sfx.mp3');
-    document.getElementById("lol_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-
-        document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_color_96px.png"
-    });
-
-    document.getElementById("lol_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-        document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
-    });
-
-    document.getElementById("lor_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-        document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_color_96px.png"
-    });
-
-    document.getElementById("lor_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-        document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
-    });
-
-    document.getElementById("valorant_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-        document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_colors_96px.png"
 
     });
 
-    document.getElementById("valorant_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-        document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
+    document.getElementById("app-ver").addEventListener("click", event => {
+        window.open('https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/releases');
     });
 
-    document.getElementById("home_sidebar").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-
-
-    });
-
-    document.getElementById("home_sidebar").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-
-    });
-
-    document.getElementById("league-locale-settings").addEventListener("mouseover", event => {
-        hoverSidebarButtonsSFX.play();
-    });
-    document.getElementById("league-locale-settings").addEventListener("mouseout", event => {
-        hoverSidebarButtonsSFX.currentTime = 0
-    });
 
     //#endregion
 
@@ -633,7 +470,7 @@ function firstRun() {
 
         try {
             var settingsString = JSON.stringify(settingsJson, null, 2);
-            fs.writeFile('settings.json', settingsString, (err) => {});
+            fs.writeFile('settings.json', settingsString, (err) => { });
             location.reload();
 
 
@@ -669,7 +506,7 @@ function readSettingsJson() {
         var configuration = JSON.parse(dataJson);
         dir = configuration.gamePath;
         audioVolume = configuration.volume;
-        audioOptions = configuration.sound;
+
         default_locale = configuration.locale;
         default_region = configuration.region;
         leagueGamePath = configuration.leagueDirectory;
@@ -739,7 +576,6 @@ function readSettingsJson() {
 function WriteJson() {
     var config = {
         gamePath: dir.toString(),
-        sound: audioOptions,
         volume: audioVolume,
         locale: default_locale,
         region: default_region,
@@ -930,7 +766,7 @@ function writeYaml() {
         data.install.globals.region = default_region;
 
         let yamlStr = yaml.safeDump(data);
-        fs.writeFileSync(leagueGamePath + '\\Config\\LeagueClientSettings.yaml', yamlStr, function(err, file) {
+        fs.writeFileSync(leagueGamePath + '\\Config\\LeagueClientSettings.yaml', yamlStr, function (err, file) {
             if (err) {
                 throw err;
             }
@@ -950,54 +786,51 @@ function writeYaml() {
 //#region  Audio Functions
 function audioPlayer(sound) {
 
-    if (audioOptions == true) {
-        var sw = sound;
 
-        switch (sw) {
-            case 'League':
+    var sw = sound;
 
-                audio.pause();
-                audio.currentTime = 0;
-                audio = new Audio('./assets/music/League.mp3');
-                audio.loop = true;
-                audio.volume = audioVolume;
-                audio.play();
+    switch (sw) {
+        case 'League':
 
-                break;
-            case 'Bacon':
+            audio.pause();
+            audio.currentTime = 0;
+            audio = new Audio('./assets/music/League.ogg');
+            audio.loop = true;
+            audio.volume = audioVolume;
+            audio.play();
 
-                audio.pause();
-                audio.currentTime = 0;
-                audio = new Audio('./assets/music/Bacon.mp3');
-                audio.loop = true;
-                audio.volume = audioVolume;
-                audio.play();
+            break;
+        case 'Bacon':
 
-                break;
-            case 'Valorant':
-                audio.pause();
-                audio.currentTime = 0;
-                audio = new Audio('./assets/music/Valorant.mp3');
-                audio.loop = true;
-                audio.volume = audioVolume;
-                audio.play();
-                break;
+            audio.pause();
+            audio.currentTime = 0;
+            audio = new Audio('./assets/music/Bacon.ogg');
+            audio.loop = true;
+            audio.volume = audioVolume;
+            audio.play();
 
-            default:
-                break;
-        }
+            break;
+        case 'Valorant':
+            audio.pause();
+            audio.currentTime = 0;
+            audio = new Audio('./assets/music/Valorant.ogg');
+            audio.loop = true;
+            audio.volume = audioVolume;
+            audio.play();
+            break;
+
+        default:
+            break;
     }
-
-
-
-
 }
+
+
 
 function audioVolumePlayer() {
 
 
 
-    (async() => {
+    (async () => {
 
         const { value: newVolume } = await Swal.fire({
             input: 'range',
@@ -1063,45 +896,14 @@ function LeaguePatchNews() {
 
 }
 
-function TftPatchNNews() {
 
-
-    request('https://teamfighttactics.leagueoflegends.com/' + newsLang + '/page-data/news/page-data.json', { json: true }, (err, res, body) => {
-        if (err) { return console.log(err); }
-        try {
-            let checkInternal = (body.result.pageContext.data.articleList.articles[1].link.internal)
-
-            if (checkInternal === false) {
-                patch_note_link_tft = (body.result.pageContext.data.articleList.articles[1].link.url)
-                document.getElementById("tft-patch-note-title").innerHTML = (body.result.pageContext.data.articleList.articles[1].title);
-                document.getElementById("tft-patch-note-image").src = (body.result.pageContext.data.articleList.articles[1].imageUrl);
-
-
-            } else {
-                patch_note_link_tft = (body.result.pageContext.data.articleList.articles[1].link.url)
-                document.getElementById("tft-patch-note-title").innerHTML = (body.result.pageContext.data.articleList.articles[1].title);
-                document.getElementById("tft-patch-note-image").src = (body.result.pageContext.data.articleList.articles[1].imageUrl);
-            }
-
-
-
-        } catch (error) {
-            console.log(error)
-        }
-
-
-
-    });
-
-
-}
 
 function BaconPatchNews() {
     // var patch_note_title, patch_note_image_url;
     // request('https://playvalorant.com/page-data/en-us/news/game-updates/valorant-patch-notes-1-05/page-data.json', { json: true }, (err, res, body) => {
     //     if (err) { return console.log(err); }
     //     patch_note_title = (body.result.data.allContentstackArticles.nodes[0].title);
-    patch_note_image_url = ('https://dd.b.pvp.net/latest/set3/en_us/img/cards/03MT087-full.png');
+    patch_note_image_url = ('https://images.contentstack.io/v3/assets/blta38dcaae86f2ef5c/blt2d6c87d6bf028a60/5fdc239d02fd0c7d345f12d0/SN2021_LoR_Thumbnail_Banner.jpg');
     //     patch_note_link_valorant = (body.path);
 
 
@@ -1197,18 +999,14 @@ function ValorantPatchNews() {
             document.getElementById("valorant-patch-note-image").src = (body.result.data.allContentstackArticles.nodes[0].banner.url);
 
 
-            patch_note_link_valorant1 = (body.result.data.allContentstackArticles.nodes[1].url.url);
+            patch_note_link_valorant1 = (body.result.data.allContentstackArticles.nodes[2].url.url);
 
-            document.getElementById("valorant-patch-note-title1").innerHTML = (body.result.data.allContentstackArticles.nodes[1].title);
-            document.getElementById("valorant-patch-note-image1").src = (body.result.data.allContentstackArticles.nodes[1].banner.url);
+            document.getElementById("valorant-patch-note-title1").innerHTML = (body.result.data.allContentstackArticles.nodes[2].title);
+            document.getElementById("valorant-patch-note-image1").src = (body.result.data.allContentstackArticles.nodes[2].banner.url);
 
 
-            patch_note_link_valorant2 = (body.result.data.allContentstackArticles.nodes[2].url.url);
 
-            document.getElementById("valorant-patch-note-title2").innerHTML = (body.result.data.allContentstackArticles.nodes[2].title);
-            document.getElementById("valorant-patch-note-image2").src = (body.result.data.allContentstackArticles.nodes[2].banner.url);
-
-            checkExternalLink(patch_note_link_valorant, patch_note_link_valorant1, patch_note_link_valorant2);
+            checkExternalLink(patch_note_link_valorant, patch_note_link_valorant1);
 
         } catch (error) {
 
@@ -1256,25 +1054,7 @@ function LolNews() {
             document.getElementById("lol-news-image2").src = (body.result.pageContext.data.sections[0].props.articles[2].imageUrl);
 
 
-            lol_news_url3 = (body.result.pageContext.data.sections[0].props.articles[3].link.url)
 
-            document.getElementById("lol-news-title3").innerHTML = (body.result.pageContext.data.sections[0].props.articles[3].title);
-            document.getElementById("lol-news-image3").src = (body.result.pageContext.data.sections[0].props.articles[3].imageUrl);
-
-
-
-
-            lol_news_url4 = (body.result.pageContext.data.sections[0].props.articles[4].link.url)
-
-            document.getElementById("lol-news-title4").innerHTML = (body.result.pageContext.data.sections[0].props.articles[4].title);
-            document.getElementById("lol-news-image4").src = (body.result.pageContext.data.sections[0].props.articles[4].imageUrl);
-
-
-
-            lol_news_url5 = (body.result.pageContext.data.sections[0].props.articles[5].link.url)
-
-            document.getElementById("lol-news-title5").innerHTML = (body.result.pageContext.data.sections[0].props.articles[5].title);
-            document.getElementById("lol-news-image5").src = (body.result.pageContext.data.sections[0].props.articles[5].imageUrl);
         } catch (error) {
 
         }
@@ -1283,26 +1063,6 @@ function LolNews() {
     });
 
 
-
-}
-
-function createBrowserWindow(url) {
-
-    const BrowserWindow = remote.BrowserWindow;
-    const window = new BrowserWindow({
-        height: 600,
-        width: 800,
-        resizable: false,
-        parent: win
-
-    });
-    window.removeMenu(); //remove devTools
-
-    window.loadURL(url);
-
-    window.on('close', function() {
-        audio.play();
-    });
 
 }
 
@@ -1321,60 +1081,60 @@ function trayIconOption() {
     try {
         tray = new Tray(IconPath);
         let template = [{
-                label: 'League of Legends',
-                click: function() {
-                    launchLeague();
-                }
-
-            },
-            {
-                type: "separator"
-            },
-
-            {
-                label: 'Legends of Runeterra',
-                click: function() {
-                    launchBacon();
-                }
-            },
-            {
-                type: "separator"
-            },
-
-            {
-                label: 'VALORANT',
-                click: function() {
-                    launchValorant();
-                }
-            },
-            {
-                type: "separator"
-            },
-
-            {
-
-                label: 'Restart',
-
-                click: function() {
-                    app.quit();
-                    app.relaunch();
-                }
-
-            },
-
-            {
-                type: "separator"
-            },
-
-            {
-
-                label: 'Exit',
-
-                click: function() {
-
-                    app.quit();
-                }
+            label: 'League of Legends',
+            click: function () {
+                launchLeague();
             }
+
+        },
+        {
+            type: "separator"
+        },
+
+        {
+            label: 'Legends of Runeterra',
+            click: function () {
+                launchBacon();
+            }
+        },
+        {
+            type: "separator"
+        },
+
+        {
+            label: 'VALORANT',
+            click: function () {
+                launchValorant();
+            }
+        },
+        {
+            type: "separator"
+        },
+
+        {
+
+            label: 'Restart',
+
+            click: function () {
+                app.quit();
+                app.relaunch();
+            }
+
+        },
+
+        {
+            type: "separator"
+        },
+
+        {
+
+            label: 'Exit',
+
+            click: function () {
+
+                app.quit();
+            }
+        }
 
 
         ]
@@ -1383,8 +1143,9 @@ function trayIconOption() {
 
 
 
-        tray.on('double-click', function() {
+        tray.on('double-click', function () {
             win.show();
+            audio.play();
         })
 
     } catch (error) {
@@ -1392,7 +1153,7 @@ function trayIconOption() {
             icon: 'error',
             title: 'Oops...',
             text: 'Something went wrong! ' + error.toString(),
-            footer: '<a href=http://urgl.me/Support.html target=_blank>Report an issue</a>'
+            footer: '<a href=https://github.com/Eliosth/UNOFFICIAL-Riot-Games-Launcher/issues target=_blank>Report an issue</a>'
         })
     }
 
@@ -1408,7 +1169,7 @@ function launchLeague() {
 
         var execArguments = ['--launch-product=league_of_legends', '--launch-patchline=live'];
 
-        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function(err, data) {
+        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function (err, data) {
             if (err) {
                 Swal.fire(
                     'Error ',
@@ -1437,7 +1198,7 @@ function launchBacon() {
 
         var execArguments = ['--launch-product=bacon', '--launch-patchline=live'];
 
-        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function(err, data) {
+        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function (err, data) {
             if (err) {
                 Swal.fire(
                     'Error ',
@@ -1471,7 +1232,7 @@ function launchValorant() {
 
         var execArguments = ['--launch-product=valorant', '--launch-patchline=live'];
 
-        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function(err, data) {
+        child(`${dir}\\Riot Client\\RiotClientServices.exe`, execArguments, function (err, data) {
             if (err) {
                 Swal.fire(
                     'Error ',
@@ -1517,7 +1278,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Zvuky' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Zakázat zvuky' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Jazyky' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplikovat' //Apply
             document.getElementById("apply-changes").innerHTML = 'Uložit' //Save 
@@ -1549,7 +1310,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Geräusche' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Deaktivieren Sie Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Sprachen' //Languages
             document.getElementById("apply-lang").innerHTML = 'Anwenden' //Apply
             document.getElementById("apply-changes").innerHTML = 'sparen' //Save 
@@ -1575,7 +1336,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Ακούγεται' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Απενεργοποίηση ήχων' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Γλώσσες' //Languages
             document.getElementById("apply-lang").innerHTML = 'Ισχύουν' //Apply
             document.getElementById("apply-changes").innerHTML = 'Αποθηκεύσετε' //Save 
@@ -1602,7 +1363,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Search'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sounds' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disable Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Languages' //Languages
             document.getElementById("apply-lang").innerHTML = 'Apply' //Apply
             document.getElementById("apply-changes").innerHTML = 'Save' //Save 
@@ -1626,7 +1387,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Search'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sounds' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disable Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Languages' //Languages
             document.getElementById("apply-lang").innerHTML = 'Apply' //Apply
             document.getElementById("apply-changes").innerHTML = 'Save' //Save 
@@ -1650,7 +1411,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Search'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sounds' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disable Sounds' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Languages' //Languages
             document.getElementById("apply-lang").innerHTML = 'Apply' //Apply
             document.getElementById("apply-changes").innerHTML = 'Save' //Save 
@@ -1674,7 +1435,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Buscar'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sonidos' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Desactivar Sonidos' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Idiomas' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplicar' //Apply
             document.getElementById("apply-changes").innerHTML = 'Guardar' //Save 
@@ -1699,7 +1460,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Buscar'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sonidos' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Desactivar Sonidos' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Idiomas' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplicar' //Apply
             document.getElementById("apply-changes").innerHTML = 'Guardar' //Save 
@@ -1724,7 +1485,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Des sons' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Désactiver les sons' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Langues' //Languages
             document.getElementById("apply-lang").innerHTML = 'Appliquer' //Apply
             document.getElementById("apply-changes").innerHTML = 'sauver' //Save 
@@ -1749,7 +1510,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'hangok' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Hangok letiltása' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Nyelvek' //Languages
             document.getElementById("apply-lang").innerHTML = 'Alkalmaz' //Apply
             document.getElementById("apply-changes").innerHTML = 'Mentés' //Save 
@@ -1774,7 +1535,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Suoni' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Disabilita i suoni' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Le lingue' //Languages
             document.getElementById("apply-lang").innerHTML = 'Applicare' //Apply
             document.getElementById("apply-changes").innerHTML = 'Salva' //Save 
@@ -1799,7 +1560,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = '検索'; //select Folder
 
             document.getElementById("sounds").innerHTML = '音' //Sounds
-            document.getElementById("disable-sounds").innerHTML = '音を無効にする' //Disable Sounds
+
             document.getElementById("language").innerHTML = '言語' //Languages
             document.getElementById("apply-lang").innerHTML = '申し込む' //Apply
             document.getElementById("apply-changes").innerHTML = '保存する' //Save 
@@ -1826,7 +1587,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = '소리' //Sounds
-            document.getElementById("disable-sounds").innerHTML = '소리 비활성화' //Disable Sounds
+
             document.getElementById("language").innerHTML = '언어' //Languages
             document.getElementById("apply-lang").innerHTML = '대다' //Apply
             document.getElementById("apply-changes").innerHTML = '저장' //Save 
@@ -1852,7 +1613,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Dźwięki' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Wyłącz dźwięki' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Języki' //Languages
             document.getElementById("apply-lang").innerHTML = 'Zastosować' //Apply
             document.getElementById("apply-changes").innerHTML = 'Zapisać' //Save 
@@ -1876,7 +1637,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Pesquisar'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Sons' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Desativar sons' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'línguas' //Languages
             document.getElementById("apply-lang").innerHTML = 'Aplique' //Apply
             document.getElementById("apply-changes").innerHTML = 'Salve' //Save 
@@ -1902,7 +1663,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'Sunete' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Dezactivați sunetele' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Limbile' //Languages
             document.getElementById("apply-lang").innerHTML = 'aplica' //Apply
             document.getElementById("apply-changes").innerHTML = 'Salvați' //Save 
@@ -1926,7 +1687,7 @@ function locale() {
             document.getElementById('selectFolder').innerHTML = 'Поиск'; //select Folder
 
             document.getElementById("sounds").innerHTML = 'Звуки' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Отключить звуки' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Языки' //Languages
             document.getElementById("apply-lang").innerHTML = 'Подать заявление' //Apply
             document.getElementById("apply-changes").innerHTML = 'Сохранить' //Save 
@@ -1953,7 +1714,7 @@ function locale() {
 
 
             document.getElementById("sounds").innerHTML = 'sesler' //Sounds
-            document.getElementById("disable-sounds").innerHTML = 'Sesleri devre dışı bırak' //Disable Sounds
+
             document.getElementById("language").innerHTML = 'Diller' //Languages
             document.getElementById("apply-lang").innerHTML = 'Uygulamak' //Apply
             document.getElementById("apply-changes").innerHTML = 'Kayıt etmek' //Save 

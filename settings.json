@@ -1,4 +1,8 @@
 {
-  "gamePath": "C:\\Riot Games",
-  "sound": true
+  "gamePath": "D:\\Games\\Riot Games",
+  "volume": 1,
+  "locale": "",
+  "region": "",
+  "leagueDirectory": "C:\\Riot Games\\League of Legends",
+  "lang": "es-mx"
 }

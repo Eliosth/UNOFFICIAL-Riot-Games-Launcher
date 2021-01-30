@@ -33,6 +33,12 @@ if (!gotTheLock) {
     log.info('App starting...');
 
 
+    //development only 
+    // try {
+    //     require('electron-reloader')(module);
+    // } catch { }
+
+
     //listen to app to be ready
     //createWindow
     app.whenReady().then(createWindow)
@@ -50,8 +56,8 @@ function createWindow() {
 
     //create neww window
     mainWindow = new BrowserWindow({
-        width: 1170,
-        height: 604,
+        width: 1280,
+        height: 720,
         'min-height': 1170,
         'min-width': 604,
         resizable: false,
@@ -65,9 +71,9 @@ function createWindow() {
     });
     //load html into window
     mainWindow.loadFile('index.html');
-    mainWindow.removeMenu(); // remove devTools
+    //mainWindow.removeMenu(); // remove devTools
 
-    mainWindow.webContents.on('new-window', function(e, url) {
+    mainWindow.webContents.on('new-window', function (e, url) {
         e.preventDefault();
         electron.shell.openExternal(url);
     });
@@ -115,4 +121,5 @@ function updateBrowserwindow() {
     //updateWindow.removeMenu(); // remove devTools
 
     updateWindow.loadFile('updateWindow.html');
+    updateWindow.focus();
 }

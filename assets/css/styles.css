@@ -160,11 +160,13 @@ a {
 }
 
 .card-title {
-    font-size: 15px;
-    margin-top: -10px;
+    font-size: 13.5px;
+    margin-top: -12px;
     text-align: center;
 }
 
 .card-img-top {
     height: 169px;
 }
+
+
