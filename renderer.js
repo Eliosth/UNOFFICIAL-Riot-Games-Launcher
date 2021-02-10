@@ -9,7 +9,9 @@ const request = require('request');
 const os = require('os');
 const yaml = require('js-yaml');
 var child = require('child_process').execFile;
+
 const win = remote.getCurrentWindow();
+require('v8-compile-cache');
 const { Menu, Tray, dialog, app } = remote;
 var newsLang;
 var patch_note_link_league, patch_note_link_league1, patch_note_link_tft, leagueGamePath;
@@ -879,8 +881,8 @@ function LeaguePatchNews() {
             patch_note_link_league1 = (body.result.pageContext.data.sections[0].props.articles[0].link.url)
 
 
-            document.getElementById("lol-patch-note-title1").innerHTML = (body.result.pageContext.data.sections[0].props.articles[0].title);
-            document.getElementById("lol-patch-note-image1").src = (body.result.pageContext.data.sections[0].props.articles[0].imageUrl);
+            document.getElementById("lol-patch-note-title1").innerHTML = (body.result.pageContext.data.sections[0].props.articles[1].title);
+            document.getElementById("lol-patch-note-image1").src = (body.result.pageContext.data.sections[0].props.articles[1].imageUrl);
 
         } catch (error) {
 
@@ -1125,6 +1127,7 @@ function trayIconOption() {
         {
             type: "separator"
         },
+
 
         {
 

@@ -1,11 +1,15 @@
 const electron = require("electron");
 const { autoUpdater } = require('electron-updater');
 const log = require('electron-log');
+require('v8-compile-cache');
 const { app, BrowserWindow, ipcMain } = electron;
 let mainWindow;
 let updateWindow;
 
 const gotTheLock = app.requestSingleInstanceLock()
+
+app.disableHardwareAcceleration();
+app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling,MediaSessionService');
 
 function sendStatusToWindow(text) {
     log.info(text);
@@ -27,13 +31,18 @@ if (!gotTheLock) {
     });
 
 
+
+
     // configure logging
     autoUpdater.logger = log;
     autoUpdater.logger.transports.file.level = 'info';
+
     log.info('App starting...');
 
+    
 
-    //development only 
+
+    // // development only 
     // try {
     //     require('electron-reloader')(module);
     // } catch { }

@@ -11,7 +11,6 @@
 
     <!-- Include the Borderless theme -->
 
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
@@ -119,7 +118,8 @@
         </div>
 
         <div id="home" width="1074px" height="605px" class="tabcontent">
-            <img draggable="false" class="img-fluid" src="assets/img/blur-bg.jpg">
+            <img draggable="false" class="img-fluid" src="assets/img/LolHero.jpg"
+                style="filter: blur(3px);margin-top: 30px;">
 
 
             <div id="news-board" style="margin-top: -100px; margin-left: 60px;">
@@ -359,29 +359,34 @@
         <div id="Settings" width="1074px" height="605px" class="tabcontent" style="text-align: center;">
 
 
-            <div class="team-clean"
-                style="margin-top:50px; width: auto;margin-left: 180px; background-color: #2C3A4D; color: white;">
-                <div class="container">
 
-                    <div class="row people">
+            <div
+                style="margin-top:10%; width: auto;margin-right: 20%; background-color: #2C3A4D; color: white;">
 
+                <div class="container ">
 
-                        <!-- league locale -->
-                        <div class="col-md-6 col-lg-4 item">
-
-
-                            <img id="league-locale-settings" onclick="openPanel(event, 'localeRegion')"
-                                style="cursor: pointer;" src="assets/img/icons8_world_129px.png" draggable="false">
-
-                            <h3 class="name" id="league-locale-title"></h3>
+                    <!-- Locale -->
+                    <div class="row" >
+                        <div class="col">
+                            <p class="name" id="league-locale-title"></p>
                         </div>
-                        <!-- league locale -->
 
-                        <!-- language -->
-                        <div class="col-md-6 col-lg-4 item">
-                            <h3 class="name" id="language"></h3>
+                        <div class="col-6">
+                            <img id="league-locale-settings" onclick="openPanel(event, 'localeRegion')"
+                                style="cursor: pointer;margin-top: 20px;" src="assets/img/icons8_region_32px.png"
+                                draggable="false">
+                        </div>
+
+                    </div>
+
+                    <!-- Language -->
+                    <div class="row ">
+                        <div class="col ">
+                            <p class="name" id="language"></p>
+                        </div>
+                        <div class="col-6 border-top" style="margin-top: 10px;">
                             <select class="form-control  form-control-sm" id="language-id"
-                                style="width: 90%;margin-left: 10%;">
+                                style="width: 28%;margin-left: 37%;margin-top: 20px;">
                                 <option value=" default-lang " disabled selected hidden></option>
                                 <option value="cs-cz">čeština</option>
                                 <option value="de-de">DEUTSCHE</option>
@@ -402,48 +407,51 @@
                                 <option value="ru-ru">русский</option>
                                 <option value="tr-tr">Türk</option>
                             </select>
-                            <button type="button" class="btn btn-success btn-lg btn-block "
-                                style="width: 90%;margin-left: 10%; margin-top: 5%;" id="apply-lang"></button>
+
+                            <button type="button" class="btn btn-success btn-sm" id="apply-lang"
+                                style="margin-top: 5%;"></button>
 
                         </div>
-                        <!-- language end -->
 
+                    </div>
 
-
-                        <!-- white space -->
-                        <div class="col-md-6 col-lg-4 item">
-
-
+                    <!-- Folder path -->
+                    <div class="row" >
+                        <div class="col">
+                            <p class="name">Riot Games Folder</p>
                         </div>
-                        <!-- white space end -->
-
-
-                        <!-- path  -->
-                        <div class="col-md-6 col-lg-4 item">
-                            <h3 class="name">Riot Games Folder</h3>
-                            <p class="title" id="displayPath"></p>
-                            <button class="btn btn-success" type="button" style="font-size: 19px;margin-top:20px;"
-                                id="selectFolder"></button>
+                        <div class="col-6 border-top" style="margin-top: 10px;">
+                            <p class="title" id="displayPath" style="margin-top: 20px;"></p>
+                            <button class="btn btn-success btn-sm" type="button" id="selectFolder"></button>
                         </div>
-                        <!-- path end -->
 
-                        <!-- sound -->
-                        <div class="col-md-6 col-lg-4 item">
-                            <h3 class="name" id="sounds"></h3>
+                    </div>
 
-
-                            <img src="assets/img/icons8_audio_129px.png" id="volume-controller" draggable="false"
-                                style="cursor: pointer;" data-toggle="tooltip" data-toggle="tooltip"
+                    <!-- audio -->
+                    <div class="row " >
+                        <div class="col">
+                            <p class="name" id="sounds"></p>
+                        </div>
+                        <div class="col-6 border-top" style="margin-top: 10px;">
+                            <img src="assets/img/icons8_audio_32px.png" id="volume-controller" draggable="false"
+                                style="cursor: pointer; margin-top: 20px;" data-toggle="tooltip" data-toggle="tooltip"
                                 data-placement="top" title="Volume">
-
                         </div>
-                        <!-- sound end -->
 
                     </div>
 
 
+
+
+
+
                 </div>
             </div>
+
+
+
+
+
         </div>
         </div>
 
@@ -493,7 +501,7 @@
                         <option value="tr_TR">Türk</option>
                     </select>
 
-                    <button type="button" class="btn btn-success btn-lg btn-block "
+                    <button type="button" class="btn btn-success btn-sm btn-block "
                         style="width: 20%;margin-left: 40%; margin-top: 5%;" id="apply-changes"></button>
                     <div style="padding-left: 20px;padding-right: 20px;background-color: #2C3A4D;color: white;">
                         <div>
@@ -546,6 +554,12 @@
                     document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_colors_96px.png"
                     document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
                     document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    break;
+
+                default:
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
                     break;
 
             }
