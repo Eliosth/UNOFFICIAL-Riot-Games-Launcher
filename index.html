@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html style="height: 604px; ">
+<script>
+    require('./renderer.js')
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Unofficial Riot Games Launcher</title>
+
+    <!-- Include the Borderless theme -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Blue-Navbar.css">
+    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
+    <link rel="stylesheet" href="assets/css/iframe-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Clean.css">
+
+
+    <script>
+    </script>
+
+</head>
+
+<body style="height: 630;">
+
+    <header id="titlebar">
+
+        <div id="drag-region">
+
+            <div id="window-controls">
+                <div class="button" id="min-button">
+                    <img class="icon" style="cursor:pointer;"
+                        srcset="icons/min-w-10.png 1x, icons/min-w-12.png 1.25x, icons/min-w-15.png 1.5x, icons/min-w-15.png 1.75x, icons/min-w-20.png 2x, icons/min-w-20.png 2.25x, icons/min-w-24.png 2.5x, icons/min-w-30.png 3x, icons/min-w-30.png 3.5x"
+                        draggable="false" />
+                </div>
+
+                <div class="button" id="help-button">
+                    <a href="https://jslquintero.gitbook.io/unofficial-riot-games-launcher/untitled" target="_blank">
+                        <img class="" style="cursor:pointer;" src="icons/help-w-30.png" draggable="false" /></a>
+                </div>
+
+                <div class="button" id="close-button">
+                    <img class="icon" style="cursor:pointer;"
+                        srcset="icons/close-w-10.png 1x,icons/close-w-12.png 1.25x, icons/close-w-15.png 1.5x, icons/close-w-15.png 1.75x, icons/close-w-20.png 2x, icons/close-w-20.png 2.25x, icons/close-w-24.png 2.5x, icons/close-w-30.png 3x, icons/close-w-30.png 3.5x"
+                        draggable="false" />
+                </div>
+
+                <div class="" id="setting-button" style="cursor: pointer;">
+                    <img class="" draggable="false" id="settings_sidebar" onclick="openPanel(event, 'Settings')"
+                        src="assets/img/icons8_settings_32px.png">
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!--Sidebar Start-->
+    <div id="wrapper">
+        <div id="sidebar-wrapper"
+            style="width: 140px;background-color: #273344;filter: brightness(113%);opacity: 1;height: 720px;">
+            <ul class="sidebar-nav">
+
+                <li class="sidebar-brand" style="height: 34px;"></li>
+                <li class="text-left" style="width: 140px;" id="home_sidebar">
+
+                    <img src="assets/img/icons8_news_feed_64px.png" style="cursor: pointer;margin-left: 20px;"
+                        id="news-title" onclick="openPanel(event, 'home')" />
+                </li>
+
+
+                <li class="text-left" style="width: 140px;"> <img draggable="false" id="lol_sidebar"
+                        onclick="openPanel(event, 'League')" class="Game_sidebar"
+                        src="assets/img/icons8_league_of_legends_96px.png" style="margin-top: 40px;"></li>
+                <li class="text-left" style="width: 140px;">
+
+                </li>
+
+                <li class="text-left" style="width: 140px;"> <img draggable="false" id="lor_sidebar"
+                        onclick="openPanel(event, 'Bacon')" src="assets/img/icons8_legends_of_runeterra_96px.png"
+                        style="margin-top: 40px;"></li>
+
+
+                <li class="text-left" style="width: 140px;"> <img draggable="false" id="valorant_sidebar"
+                        onclick="openPanel(event, 'Valorant')" src="assets/img/icons8_valorant_96px.png"
+                        style="margin-top: 40px;"></li>
+
+                <li class="text-left">
+                    <p sdraggable="false" id="app-ver"
+                        style="margin-top: 145px;margin-left:5px;color:white; cursor: pointer;"></p>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <!--Sidebar End-->
+
+    <section id="frame_section"
+        style="width: 1280px;height: 720px;margin-left: 120px; opacity: 1;background-color: #2C3A4D; ">
+
+        <div id="defaultopen" width="1074px" height="605px" class="tabcontent">
+            <img draggable="false" class="img-fluid" src="assets/img/background-default.jpg">
+        </div>
+
+        <div id="home" width="1074px" height="605px" class="tabcontent">
+            <img draggable="false" class="img-fluid" src="assets/img/LolHero.jpg"
+                style="filter: blur(3px);margin-top: 30px;">
+
+
+            <div id="news-board" style="margin-top: -100px; margin-left: 60px;">
+
+
+
+
+                <!-- card top -->
+
+                <div class="card " id="lol-news-card2"
+                    style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+
+                    <div class="card-body">
+                        <h5 class="card-title" id="lol-news-title1"
+                            style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                    </div>
+                    <img class="card-img-bot" id="lol-news-image1" draggable="false">
+
+
+
+                </div>
+                <!-- card top end -->
+
+
+
+                <!-- card bottom -->
+                <div class="card " id="lol-news-card3"
+                    style="margin-top: 85px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+
+                    <div class="card-body">
+                        <h5 class="card-title" id="lol-news-title2"
+                            style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                    </div>
+                    <img class="card-img-bot" id="lol-news-image2" draggable="false">
+
+                </div>
+                <!-- card bottom end -->
+
+
+                <!-- card big view -->
+                <div class="card  " id="lol-news-card"
+                    style="margin-top: -300px;width: 600px;height: 340px;margin-left: 425px;opacity: 100%;background-color: #2C3A4D;">
+                    <img class="card-img-top" id="lol-news-image" draggable="false"
+                        style="width:600px; height: 300px; ">
+                    <div class="card-body">
+                        <h5 class="card-title" id="lol-news-title"
+                            style="text-align: center;color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                    </div>
+
+
+                </div>
+                <!-- card big view end -->
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+        <div id="League" width="1074px" height="605px" class="tabcontent">
+
+            <img draggable="false" class="img-fluid" src="assets/img/LolHero.jpg" style="margin-left: -70px;">
+
+            <!-- card -->
+            <div class="card  " id="lol-patch-note-card"
+                style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+
+                <div class="card-body">
+                    <h5 class="card-title" id="lol-patch-note-title"
+                        style="color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                </div>
+                <img class="card-img-bot" id="lol-patch-note-image" draggable="false">
+
+
+            </div>
+            <!-- card end -->
+
+
+            <!-- card 2 -->
+            <div class="card  " id="lol-patch-note-card1"
+                style="margin-top: 85px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+
+                <div class="card-body">
+                    <h5 class="card-title" id="lol-patch-note-title1"
+                        style="color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                </div>
+                <img class="card-img-bot" id="lol-patch-note-image1" draggable="false">
+
+
+            </div>
+            <!-- card 2 end -->
+
+
+            <div style="margin-top: 185px;">
+                <p id="playLeague" class="play-button"
+                    style="color: rgb(247,235,235);margin-top: 100px;font-size: 64px;font-family: 'Rubik Mono One', sans-serif;margin-left: 38px;width: 300px; height: 40px; cursor:pointer;">
+                </p>
+
+
+                <div style="margin-top: -280px;margin-left: -1790px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 offset-11" style="margin-left: 1023px;">
+
+                                <div style="margin-top: 125px;margin-left: -178px; width: 200px;height: 129px;">
+                                    <img draggable="false" src="assets/img/lol-logo.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div id="Bacon" width="1074px" height="605px" class="tabcontent">
+            <img draggable="false" class="img-fluid" src="assets/img/baconHero.jpg" style="margin-left: -70px;">
+
+            <!-- card -->
+            <div class="card  " id="bacon-patch-note-card"
+                style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+                <div class="card-body">
+                    <h5 class="card-title" id="bacon-patch-note-title"
+                        style="color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                </div>
+                <img class="card-img-bot" id="bacon-patch-note-image" draggable="false">
+
+            </div>
+            <!-- card end -->
+
+
+            <div style="margin-top: 500px;">
+                <p class="play-button" class="shadow"
+                    style="color: rgb(247,235,235);margin-top: -100px;font-size: 64px;font-family: 'Rubik Mono One', sans-serif;margin-left: 38px;width: 300px;height: 10px; cursor:pointer;"
+                    id="playBacon"></p>
+
+                <div style="margin-top: -300px;margin-left: -1790px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 offset-11" style="margin-left: 1023px;">
+
+
+                                <div style="margin-top: 180px;margin-left: -170px; width: 200px;height: 129px;">
+                                    <img draggable="false" src="assets/img/bacon-logo.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="Valorant" width="1074px" height="605px" class="tabcontent">
+            <img draggable="false" class="img-fluid" src="assets/img/valorantHero.jpg" style="margin-left: -70px;">
+
+            <!-- card -->
+            <div class="card  " id="valorant-patch-note-card"
+                style="margin-top: -640px;width: 300px;height: 130px;margin-left: 70px;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+                <div class="card-body">
+                    <h5 class="card-title" id="valorant-patch-note-title"
+                        style="color: white;font-weight: bold;cursor: pointer; "></h5>
+
+                </div>
+                <img class="card-img-bot" id="valorant-patch-note-image" draggable="false">
+
+            </div>
+            <!-- card end -->
+
+
+
+            <!-- card 2 -->
+            <div class="card  " id="valorant-patch-note-card1"
+                style="margin-top: 85px;width: 300px;height: 130px;margin-left: 70px ;opacity: 90%;background-color: #2C3A4D;cursor: pointer;">
+
+                <div class="card-body">
+                    <h5 class="card-title" id="valorant-patch-note-title1"
+                        style="color: white;font-weight: bold;cursor: pointer;"></h5>
+
+                </div>
+                <img class="card-img-bot" id="valorant-patch-note-image1" draggable="false">
+
+
+            </div>
+            <!-- card 2 end -->
+
+
+
+
+
+            <div style="margin-top: 185px;">
+                <p class="play-button"
+                    style="color: rgb(247,235,235);margin-top: 100px;font-size: 64px;; font-family: 'Rubik Mono One', sans-serif;margin-left: 38px;width: 300px;height: 40px; cursor:pointer;"
+                    id="playValorant"></p>
+
+                <div style="margin-top: -320px;margin-left: -1790px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 offset-11" style="margin-left: 1023px;">
+
+                                <div style="margin-top: 160px;margin-left: -190px; width: 200px;height: 129px;">
+                                    <img draggable="false" src="assets/img/valorant-logo.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        </div>
+
+        <div id="Settings" width="1074px" height="605px" class="tabcontent" style="text-align: center;">
+
+
+
+            <div
+                style="margin-top:10%; width: auto;margin-right: 20%; background-color: #2C3A4D; color: white;">
+
+                <div class="container ">
+
+                    <!-- Locale -->
+                    <div class="row" >
+                        <div class="col">
+                            <p class="name" id="league-locale-title"></p>
+                        </div>
+
+                        <div class="col-6">
+                            <img id="league-locale-settings" onclick="openPanel(event, 'localeRegion')"
+                                style="cursor: pointer;margin-top: 20px;" src="assets/img/icons8_region_32px.png"
+                                draggable="false">
+                        </div>
+
+                    </div>
+
+                    <!-- Language -->
+                    <div class="row ">
+                        <div class="col ">
+                            <p class="name" id="language"></p>
+                        </div>
+                        <div class="col-6 border-top" style="margin-top: 10px;">
+                            <select class="form-control  form-control-sm" id="language-id"
+                                style="width: 28%;margin-left: 37%;margin-top: 20px;">
+                                <option value=" default-lang " disabled selected hidden></option>
+                                <option value="cs-cz">čeština</option>
+                                <option value="de-de">DEUTSCHE</option>
+                                <option value="el-gr">Ελληνικά</option>
+                                <option value="en-au">English AU</option>
+                                <option value="en-gb">English GB</option>
+                                <option value="en-us">English US</option>
+                                <option value="es-mx">Español LATAM</option>
+                                <option value="es-es">Español España</option>
+                                <option value="fr-fr">Français</option>
+                                <option value="hu-hu">MAGYAR</option>
+                                <option value="it-it">Italiano</option>
+                                <option value="ja-jp">日本人</option>
+                                <option value="ko-kr">한국어</option>
+                                <option value="pl-pl">POLSKIE</option>
+                                <option value="pt-br">Portugues do Brasil</option>
+                                <option value="ro-ro">ROMÂNĂ</option>
+                                <option value="ru-ru">русский</option>
+                                <option value="tr-tr">Türk</option>
+                            </select>
+
+                            <button type="button" class="btn btn-success btn-sm" id="apply-lang"
+                                style="margin-top: 5%;"></button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Folder path -->
+                    <div class="row" >
+                        <div class="col">
+                            <p class="name">Riot Games Folder</p>
+                        </div>
+                        <div class="col-6 border-top" style="margin-top: 10px;">
+                            <p class="title" id="displayPath" style="margin-top: 20px;"></p>
+                            <button class="btn btn-success btn-sm" type="button" id="selectFolder"></button>
+                        </div>
+
+                    </div>
+
+                    <!-- audio -->
+                    <div class="row " >
+                        <div class="col">
+                            <p class="name" id="sounds"></p>
+                        </div>
+                        <div class="col-6 border-top" style="margin-top: 10px;">
+                            <img src="assets/img/icons8_audio_32px.png" id="volume-controller" draggable="false"
+                                style="cursor: pointer; margin-top: 20px;" data-toggle="tooltip" data-toggle="tooltip"
+                                data-placement="top" title="Volume">
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        </div>
+
+
+        <div id="localeRegion" width="1074px" height="605px" class="tabcontent" style="text-align: center;">
+
+            <div class="" style="margin-top:32px">
+                <div class="form-group" style="margin-top: 40px;color: white;">
+                    <p class="h3" style="margin-top: 40px;text-align: center;">Select a region</p>
+                    <select class="form-control  form-control-sm" id="region-id" style="width: 20%;margin-left: 40%;">
+                        <option value="default-region" disabled selected hidden></option>
+                        <option value="BR">BR</option>
+                        <option value="EUNE">EUNE</option>
+                        <option value="EUW">EUW</option>
+                        <option value="JP">JP</option>
+                        <option value="LA1">LA1</option>
+                        <option value="LA2">LA2</option>
+                        <option value="NA">NA</option>
+                        <option value="OC1">OC1</option>
+                        <option value="RU">RU</option>
+                        <option value="TR">TR</option>
+                    </select>
+
+
+                    <p class="h3" style="margin-top: 40px;text-align:center;">Select a language</p>
+
+                    <select class="form-control  form-control-sm" id="locale-id" style="width: 20%;margin-left: 40%;">
+                        <option value=" default-locale " disabled selected hidden></option>
+                        <option value="zh_CN">简体中文</option>
+                        <option value="cs_CZ">čeština</option>
+                        <option value="de_DE">DEUTSCHE</option>
+                        <option value="el_GR">Ελληνικά</option>
+                        <option value="en_AU">English AU</option>
+                        <option value="en_GB">English GB</option>
+                        <option value="en_US">English US</option>
+                        <option value="es_MX">Español LATAM</option>
+                        <option value="es_ES">Español España</option>
+                        <option value="fr_FR">Français</option>
+                        <option value="hu_HU">MAGYAR</option>
+                        <option value="it_IT">Italiano</option>
+                        <option value="ja_JP">日本人</option>
+                        <option value="ko_KR">한국어</option>
+                        <option value="pl_PL">POLSKIE</option>
+                        <option value="pt_BR">Portugues do Brasil</option>
+                        <option value="ro_RO">ROMÂNĂ</option>
+                        <option value="ru_RU">русский</option>
+                        <option value="tr_TR">Türk</option>
+                    </select>
+
+                    <button type="button" class="btn btn-success btn-sm btn-block "
+                        style="width: 20%;margin-left: 40%; margin-top: 5%;" id="apply-changes"></button>
+                    <div style="padding-left: 20px;padding-right: 20px;background-color: #2C3A4D;color: white;">
+                        <div>
+                            <p style="margin-top: 40px;" id="combo-region-locale"></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <script>
+        function openPanel(evt, panelName) {
+            var i, tabcontent, tablinks, section;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            section = document.getElementById("frame_section");
+            section.style.opacity = "1";
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+
+            }
+            tablinks = document.getElementsByClassName("text-left tablinks");
+
+            document.getElementById(panelName).style.display = "block";
+
+            switch (panelName) {
+                case "League":
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_color_96px.png"
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
+
+                    break;
+                case "Bacon":
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_color_96px.png"
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
+
+                    break;
+                case "Valorant":
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_colors_96px.png"
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    break;
+
+                default:
+                    document.getElementById("lol_sidebar").src = "assets/img/icons8_league_of_legends_96px.png"
+                    document.getElementById("lor_sidebar").src = "assets/img/icons8_legends_of_runeterra_96px.png"
+                    document.getElementById("valorant_sidebar").src = "assets/img/icons8_valorant_96px.png"
+                    break;
+
+            }
+
+            evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultopen" and click on it
+        document.getElementById("defaultopen").click();
+    </script>
+
+
+
+
+    <script src="assets/js/jquery.min.js "></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js "></script>
+    <script src="assets/js/Sidebar-Menu.js "></script>
+
+
+
+
+</body>
+
+</html>
