@@ -1,10 +1,10 @@
 # Unofficial Riot-Games-Launcher
 
-![League Tab](https://imgur.com/sR2jZWP)
+![League Tab](https://i.imgur.com/sR2jZWP.jpg)
 ---
-![Runeterra Tab](https://imgur.com/dZBYuCn)
+![Runeterra Tab](https://i.imgur.com/dZBYuCn.jpg)
 ---
-![VALORANT](https://imgur.com/ZWHng9M)
+![VALORANT](https://i.imgur.com/ZWHng9M.jpg)
 ---
 
 ![Issues](https://img.shields.io/github/issues/Eliosth/UNOFFICIAL-Riot-Games-Launcher?style=for-the-badge)
